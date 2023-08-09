@@ -1,0 +1,46 @@
+@use "./include/variables";
+
+.header {
+  position: fixed;
+  z-index: var(--z-index-header);
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.logo {
+  a {
+    display: block;
+  }
+  img {
+    width: 212px;
+    height: auto;
+    display: block;
+    @include variables.mq(sp) {
+      width: 144px;
+    }
+  }
+}
+
+.nav {
+  font-family: var(--font-playfairDisplay);
+  font-weight: 500;
+  font-size: 1.125rem;
+  letter-spacing: -.04em;
+  line-height: 1;
+  justify-self: end;
+  @include variables.mq(sp) {
+    font-size: 1rem;
+  }
+  li + li {
+    margin-top: 16px;
+    @include variables.mq(sp) {
+      margin-top: 12px;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use "./include/variables";
+
+.mainvisual {
+  position: relative;
+  height: 100dvh;
+  overflow-x: hidden;
+}
+
+.content {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.copyGroup {
+  position: relative;
+  display: grid;
+  row-gap: 24px;
+  @include variables.mq(sp) {
+    row-gap: 8px;
+  }
+  .copy {
+    img {
+      width: auto;
+      max-width: none;
+      display: block;
+      @include variables.mq(sp) {
+        height: 6vh;
+      }
+      @include variables.mq(tab) {
+        height: 8vh;
+      }
+      @include variables.mq(pc) {
+        height: 10vh;
+      }
+    }
+  }
+  .copy01 {
+    img {
+      position: relative;
+      left: -10%;
+    }
+  }
+  .copy03 {
+    img {
+      position: relative;
+      left: -6%;
+    }
+  }
+}

@@ -34,13 +34,7 @@
   letter-spacing: -.04em;
   line-height: 1;
   justify-self: end;
-  @include variables.mq(sp) {
-    font-size: 1rem;
-  }
   li + li {
     margin-top: 16px;
-    @include variables.mq(sp) {
-      margin-top: 12px;
-    }
   }
 }

@@ -23,6 +23,13 @@ const FvBg = ({ fvBgClass }: Props) => {
           height={740}
           width={1920}
         />
+        <Image
+          className={`${styles.bubble}`}
+          src="./common/img-bubble-yellow.svg"
+          alt=""
+          height={116}
+          width={77}
+        />
       </div>
     </div>
   );

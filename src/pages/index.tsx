@@ -17,9 +17,7 @@ export default function Home({recommends, nippos}:Props) {
   return (
     <>
       <main>
-        <Mainvisual>
-          
-        </Mainvisual>
+        <Mainvisual/>
         <div>
           <ul>
             {recommends.map((recommend) => (

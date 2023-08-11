@@ -1,0 +1,64 @@
+@use "./include/variables";
+
+.footer {
+  background-color: var(--color-text);
+  background-image: url("/common/bg-noise.png");
+  padding-bottom: 24px;
+}
+
+.bgLogo {
+  overflow: hidden;
+  img {
+    width: 80%;
+    transform: translateY(-1px);
+    @include variables.mq(sp) {
+      width: 100%;
+    }
+  }
+}
+
+.bottom {
+  display: grid;
+  justify-content: end;
+  row-gap: 12px;
+  @include variables.mq(sp) {
+    row-gap: 8px;
+  }
+}
+
+.message {
+  color: var(--color-base-dark);
+  font-size: 1.125rem;
+  margin: 24px 0 240px;
+  @include variables.mq(sp) {
+    font-size: 1rem;
+    margin: 8px 0 160px;
+  }
+}
+
+.logoGroup {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: end;
+  column-gap: 32px;
+  @include variables.mq(sp) {
+    column-gap: 24px;
+  }
+  img {
+    width: 80px;
+    height: auto;
+    @include variables.mq(sp) {
+      width: 64px;
+    }
+  }
+}
+
+.copyright {
+  color: #fff;
+  font-size: .75rem;
+  letter-spacing: .04em;
+  @include variables.mq(sp) {
+    font-size: .625rem;
+  }
+}

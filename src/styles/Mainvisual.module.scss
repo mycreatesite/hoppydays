@@ -3,7 +3,6 @@
 .mainvisual {
   position: relative;
   height: 100dvh;
-  overflow-x: hidden;
 }
 
 .content {
@@ -16,6 +15,8 @@
   position: relative;
   display: grid;
   row-gap: 24px;
+  width: 100%;
+  overflow-x: hidden;
   @include variables.mq(sp) {
     row-gap: 8px;
   }
@@ -46,5 +47,62 @@
       position: relative;
       left: -6%;
     }
+  }
+}
+
+.bottomCopy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .bottomCopyGroup {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    @include variables.mq(sp) {
+      padding-bottom: 16px;
+    }
+    .more {
+      font-size: 12px;
+      line-height: 1.1;
+      transform-origin: left bottom;
+      transform: rotate(-90deg) translateY(100%);
+      > span {
+        font-weight: bold;
+      }
+      &::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: var(--color-text);
+        margin-right: 6px;
+      }
+    }
+    .subcopy {
+      font-size: 1.125rem;
+      padding-bottom: 40px;
+      @include variables.mq(sp) {
+        font-size: 14px;
+        padding-bottom: 0;
+      }
+      > span {
+        text-decoration: underline;
+        text-underline-offset: 8px;
+      }
+    }
+  }
+}
+
+.bubble {
+  position: absolute;
+  bottom: -40px;
+  left: calc(110 / 1920 * 100%);
+  @include variables.mq(sp) {
+    width: 14dvw;
+    bottom: -15px;
   }
 }

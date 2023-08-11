@@ -37,15 +37,15 @@
       position: absolute;
       right: 10%;
       @include variables.mq(sp) {
-        top: 3vw;
-        width: 14vw;
+        top: 3dvw;
+        width: 14dvw;
         height: auto;
       }
       @include variables.mq(tab) {
-        top: 3vw;
+        top: 3dvw;
       }
       @include variables.mq(pcxl) {
-        top: -5vw;
+        top: -5dvw;
       }
     }
   }

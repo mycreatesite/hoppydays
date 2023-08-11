@@ -2,6 +2,7 @@
 
 :root {
   --color-base: #FFE349;
+  --color-base-dark: #947D00;
   --color-text: #222222;
   --z-index-header: 50;
 }
@@ -19,6 +20,8 @@ body {
   background-color: var(--color-base);
   margin: 0;
   padding: 0;
+  line-height: 2;
+  letter-spacing: .08em;
 }
 
 a {
@@ -38,8 +41,10 @@ img {
 }
 
 .commonContainer {
-  padding: 40px 4%;
+  padding-left: calc(80 / 1920 * 100%);
+  padding-right: calc(80 / 1920 * 100%);
   @include variables.mq(sp) {
-    padding: 24px 16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }

@@ -1,14 +1,13 @@
 import Image from "next/image";
-import { ReactNode } from "react";
 import FvBg from "./FvBg";
 import styles from "@/styles/Mainvisual.module.scss";
+import Container from "./layouts/Container";
 
 type Props = {
-  children?: ReactNode;
-  fvbgClass?: string;
+  fvBgClass?: string;
 };
 
-const Mainvisual = ({ children, fvbgClass }: Props) => {
+const Mainvisual = ({ fvBgClass }: Props) => {
   return (
     <section className={`${styles.mainvisual}`}>
       <FvBg fvBgClass="" />
@@ -39,6 +38,21 @@ const Mainvisual = ({ children, fvbgClass }: Props) => {
             />
           </div>
         </div>
+      </div>
+      <Image
+        className={`${styles.bubble}`}
+        src="./common/img-bubble-white.svg"
+        alt=""
+        height={215}
+        width={174}
+      />
+      <div className={`${styles.bottomCopy}`}>
+        <Container containerClass="commonContainer">
+          <div className={styles.bottomCopyGroup}>
+            <p className={`${styles.more}`}><span>DRINK</span> MORE</p>
+            <p className={`${styles.subcopy}`}>ホッピー、それは<span>人生を豊かにする</span>エッセンス。</p>
+          </div>
+        </Container>
       </div>
     </section>
   );

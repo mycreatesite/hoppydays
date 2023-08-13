@@ -16,7 +16,7 @@
   @include variables.mq(sp) {
     margin-bottom: 120px;
   }
-  span {
+  .outline {
     color: #fff;
     text-shadow:
       1px 1px 0 var(--color-text), -1px -1px 0 var(--color-text),
@@ -80,6 +80,9 @@
     }
     .subtitle {
       font-size: 1.125rem;
+      @include variables.mq(sp) {
+        font-size: 1rem;
+      }
     }
     &::after {
       content: '';

@@ -1,4 +1,5 @@
 @use "../../variables";
+@use "../../keyframes";
 
 .message {
   position: relative;
@@ -32,8 +33,39 @@
 
 .bubble {
   position: absolute;
-  right: var(--margin-common);
+  right: var(--margin-small);
   bottom: 0;
   transform: scaleX(-1);
   width: min(14dvw, 107px);
+  animation: infinite float02 2s both alternate ease-in-out;
+}
+
+//animations
+
+.messageGroup {
+  .ja {
+    span {
+      display: inline-block;
+      transform: translateY(50%) rotate(10deg);
+      opacity: 0;
+      transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 1s;
+    }
+  }
+  .en {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: transform .5s .5s, opacity .5s .5s;
+  }
+  [class*="is-active"] & {
+    .ja {
+      span {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+      }
+    }
+    .en {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }

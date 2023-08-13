@@ -1,4 +1,5 @@
 @use "../../variables";
+@use "../../keyframes";
 
 .fvBg {
   position: absolute;
@@ -47,6 +48,49 @@
       }
       @include variables.mq(pcxl) {
         top: -5dvw;
+      }
+    }
+  }
+}
+
+//animations
+
+.fvBg {
+  // 配下ページの背景設定
+  .inner {
+    animation: wave-expansion 5s infinite alternate ease-in-out;
+    transform-origin: bottom;
+  }
+  // トップページの背景設定（初期化）
+  [class*="mainvisual"] & {
+    .inner {
+      animation: wave-expansion 5s 2s infinite alternate ease-in-out;
+      .front, .back {
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform 3s cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      .front {
+        transition-delay: .5s;
+      }
+      .bubble {
+        transform: translateY(24px);
+        opacity: 0;
+        transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1), opacity 1s;
+        transition-delay: 2.5s;
+      }
+    }
+    // トップページの背景設定（アクティブ時）
+    [class*="is-ready"] & {
+      .inner {
+        .front, .back {
+          transform: scaleY(1);
+        }
+        .bubble {
+          transform: translateY(0);
+          opacity: 1;
+          animation: infinite float01 2s both alternate ease-in-out;
+        }
       }
     }
   }

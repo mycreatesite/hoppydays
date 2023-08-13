@@ -1,22 +1,38 @@
 import styles from "@/styles/components/templates/SectionMessage.module.scss";
 import Image from "next/image";
-import Container from '@/components/layouts/Container'
+import Container from "@/components/layouts/Container";
 import { playfairDisplay } from "@/components/util/font";
 import { sawarabiGothic } from "@/components/util/font";
+import { splitTextWithSpan } from "../util/splitTextWithSpan";
 
 const SectionMessage = () => {
   return (
-    <section className={`${styles.message}`}>
-      <Container containerClass="commonContainer"> 
+    <section className={`${styles.message} js-scrollAddClass`}>
+      <Container containerClass="commonContainer">
         <div className={`${styles.messageGroup}`}>
-          <p className={`${styles.ja} ${sawarabiGothic.className}`}>低カロリー・プリン体ゼロで健康志向<br/>どんなつまみにもベストマッチ<br/>今日もあなたのそばに<br/>Hoppy brews your life.
+          <p className={`${styles.ja} ${sawarabiGothic.className}`}>
+            {splitTextWithSpan("低カロリー・プリン体ゼロで健康志向")}
+            <br />
+            {splitTextWithSpan("どんなつまみにもベストマッチ")}
+            <br />
+            {splitTextWithSpan("今日もあなたのそばに")}
+            <br />
+            {splitTextWithSpan("Hoppy brews your life.")}
           </p>
-          <p className={`${styles.en} ${playfairDisplay.className}`}>Low calorie, zero purine, health conscious.<br/>The best match for any Japanese TSUMAMI.<br/>It&apos;ll be by your side today too.<br/>Hoppy brews your life.</p>
+          <p className={`${styles.en} ${playfairDisplay.className}`}>
+            Low calorie, zero purine, health conscious.
+            <br />
+            The best match for any Japanese TSUMAMI.
+            <br />
+            It&apos;ll be by your side today too.
+            <br />
+            Hoppy brews your life.
+          </p>
         </div>
       </Container>
       <Image
         className={`${styles.bubble}`}
-        src="./common/img-bubble-white.svg"
+        src="/common/img-bubble-white.svg"
         alt=""
         height={132}
         width={107}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import FvBg from "../modules/FvBg";
 import styles from "@/styles/components/templates/SectionMainvisual.module.scss";
 import Container from "../layouts/Container";
+import { useEffect } from 'react';
 
 type Props = {
   fvBgClass?: string;
@@ -14,34 +15,58 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
       <div className={`${styles.content}`}>
         <div className={`${styles.copyGroup}`}>
           <div className={`${styles.copy} ${styles.copy01}`}>
-            <Image
-              src="./img-mv-copy.svg"
-              alt="Hoppy brews your life."
-              height={120}
-              width={9248}
-            />
+            <div className={`${styles.inner}`}>
+              <Image
+                src="/img-mv-copy.svg"
+                alt="Hoppy brews your life."
+                height={120}
+                width={5571}
+              />
+              <Image
+                src="/img-mv-copy.svg"
+                alt="Hoppy brews your life."
+                height={120}
+                width={5571}
+              />
+            </div>
           </div>
           <div className={`${styles.copy} ${styles.copy02}`}>
-            <Image
-              src="./img-mv-copy.svg"
-              alt="Hoppy brews your life."
-              height={120}
-              width={9248}
-            />
+            <div className={`${styles.inner}`}>
+              <Image
+                src="/img-mv-copy.svg"
+                alt="Hoppy brews your life."
+                height={120}
+                width={5571}
+              />
+              <Image
+                src="/img-mv-copy.svg"
+                alt="Hoppy brews your life."
+                height={120}
+                width={5571}
+              />
+            </div>
           </div>
           <div className={`${styles.copy} ${styles.copy03}`}>
-            <Image
-              src="./img-mv-copy.svg"
-              alt="Hoppy brews your life."
-              height={120}
-              width={9248}
-            />
+            <div className={`${styles.inner}`}>
+              <Image
+                src="/img-mv-copy.svg"
+                alt="Hoppy brews your life."
+                height={120}
+                width={5571}
+              />
+              <Image
+                src="/img-mv-copy.svg"
+                alt="Hoppy brews your life."
+                height={120}
+                width={5571}
+              />
+            </div>
           </div>
         </div>
       </div>
       <Image
         className={`${styles.bubble}`}
-        src="./common/img-bubble-white.svg"
+        src="/common/img-bubble-white.svg"
         alt=""
         height={215}
         width={174}

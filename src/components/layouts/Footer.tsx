@@ -8,10 +8,11 @@ const Footer = () => {
     <footer className={`${styles.footer}`}>
       <div className={`${styles.bgLogo}`}>
         <Image
-          src="./common/logo-yellow.svg"
+          src="/common/logo-yellow.svg"
           alt=""
           height={218}
           width={1536}
+          className="js-scrollParallaxLtR"
         />
       </div>
       <Container containerClass="commonContainer">
@@ -20,7 +21,7 @@ const Footer = () => {
           <div className={`${styles.logoGroup}`}>
             <Link href={`https://myscreate.com/`} target="_blank" rel="noopener noreferrer">
               <Image
-                src="./common/logo-myc.svg"
+                src="/common/logo-myc.svg"
                 alt=""
                 height={40}
                 width={80}
@@ -28,7 +29,7 @@ const Footer = () => {
             </Link>
             <Link href={`https://wicd-02-next.vercel.app/`} target="_blank" rel="noopener noreferrer">
               <Image
-                src="./common/logo-wicd.svg"
+                src="/common/logo-wicd.svg"
                 alt=""
                 height={20}
                 width={80}

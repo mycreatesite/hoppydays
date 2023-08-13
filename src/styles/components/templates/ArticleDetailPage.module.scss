@@ -1,0 +1,97 @@
+@use "../../variables";
+
+
+.detailPage {
+  padding-top: 150px;
+  padding-bottom: 160px;
+  &[class*="recommend"] {
+    .group {
+      text-align: center;
+    }
+  }
+}
+
+.heading {
+  text-align: center;
+  font-weight: 400;
+  line-height: 1;
+  font-size: clamp(1.5rem,10dvw,4.5rem);
+  letter-spacing: -.04em;
+  margin-bottom: 64px;
+  @include variables.mq(sp) {
+    margin-bottom: 40px;
+  }
+  .outline {
+    color: #fff;
+    text-shadow:
+      1px 1px 0 var(--color-text), -1px -1px 0 var(--color-text),
+      -1px 1px 0 var(--color-text), 1px -1px 0 var(--color-text),
+      0px 1px 0 var(--color-text),  0 -1px 0 var(--color-text),
+      -1px 0 0 var(--color-text), 1px 0 0 var(--color-text);
+    @include variables.mq(sp) {
+      text-shadow:
+        0.5px 0.5px 0 var(--color-text), -0.5px -0.5px 0 var(--color-text),
+        -0.5px 0.5px 0 var(--color-text), 0.5px -0.5px 0 var(--color-text),
+        0px 0.5px 0 var(--color-text),  0 -0.5px 0 var(--color-text),
+        -0.5px 0 0 var(--color-text), 0.5px 0 0 var(--color-text);
+    }
+  }
+}
+
+
+.content {
+  .date {
+    display: block;
+    color: var(--color-base-dark);
+    font-size: 1.125rem;
+    margin-bottom: 8px;
+    @include variables.mq(sp) {
+      font-size: 1rem;
+    }
+  }
+  .title {
+    font-size: 2rem;
+    line-height: 1.5;
+    @include variables.mq(sp) {
+      font-size: 1.75rem;
+    }
+  }
+  .subtitle {
+    font-size: 1.125rem;
+    margin-top: 16px;
+    line-height: 1.5;
+    @include variables.mq(sp) {
+      margin-top: 12px;
+      font-size: 1rem;
+    }
+  }
+  .info {
+    margin-top: 32px;
+  }
+  .image {
+    margin-top: 64px;
+    margin-bottom: 64px;
+    aspect-ratio: 507 / 338;
+    border-radius: 24px;
+    overflow: hidden;
+    @include variables.mq(sp) {
+      border-radius: 12px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+.link {
+  margin-top: 120px;
+  text-align: center;
+  @include variables.mq(sp) {
+    margin-top: 80px;
+  }
+}

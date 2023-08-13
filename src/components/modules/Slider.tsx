@@ -4,8 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
-import styles from "@/styles/components/modules/Slide.module.scss";
+import styles from "@/styles/components/modules/Slider.module.scss";
 import { sawarabiGothic } from "../util/font";
+import dayjs from 'dayjs';
 
 type Props = {
   items: Recommend[] | Nippo[];
@@ -28,12 +29,15 @@ const Slider = ({ items, path }: Props) => {
         },
       }}
     >
-      {items.map((item) => {
+      {items.map((item, index) => {
         const isNippo = "date" in item;
         return (
           <SwiperSlide
             key={item.id}
             className={styles.slide}
+            style={{
+              transitionDelay: `${index * 300}ms`
+            }}
           >
             <Link href={`/${path}/${item.id}`} className={`${styles.item}`}>
               <div className={`${styles.image}`}>
@@ -45,7 +49,7 @@ const Slider = ({ items, path }: Props) => {
                 />
               </div>
               <div className={`${styles.content}`}>
-                {isNippo && <time className={`${styles.date}`}>{item.date}</time>}
+                {isNippo && <time dateTime={item.date} className={`${styles.date}`}>{dayjs(item.date).format('YYYY.MMDD')}</time>}
                 {isNippo ? (
                   <h3 className={`${styles.title} ${sawarabiGothic.className}`}>{item.title}</h3>
                 ) : (

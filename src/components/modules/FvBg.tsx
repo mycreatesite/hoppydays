@@ -11,21 +11,21 @@ const FvBg = ({ fvBgClass }: Props) => {
       <div className={`${styles.inner}`}>
         <Image
           className={`${styles.back}`}
-          src="./common/bg-gold-back.svg"
+          src="/common/bg-gold-back.svg"
           alt=""
           height={740}
           width={1920}
         />
         <Image
           className={`${styles.front}`}
-          src="./common/bg-gold-front.svg"
+          src="/common/bg-gold-front.svg"
           alt=""
           height={740}
           width={1920}
         />
         <Image
           className={`${styles.bubble}`}
-          src="./common/img-bubble-yellow.svg"
+          src="/common/img-bubble-yellow.svg"
           alt=""
           height={116}
           width={77}

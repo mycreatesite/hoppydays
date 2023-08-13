@@ -5,8 +5,8 @@
   --color-base-dark: #947D00;
   --color-text: #222222;
   --z-index-header: 50;
-  --margin-common: calc(80 / 1920 * 100%);
-  --margin-common-list: calc(160 / 1920 * 100%);
+  --margin-small: calc(80 / 1920 * 100%);
+  --margin-large: calc(160 / 1920 * 100%);
 }
 
 * {
@@ -43,28 +43,38 @@ img {
 }
 
 .commonContainer {
-  padding-left: var(--margin-common);
-  padding-right: var(--margin-common);
+  padding-left: var(--margin-small);
+  padding-right: var(--margin-small);
   @include variables.mq(sp) {
     padding-left: 16px;
     padding-right: 16px;
   }
 }
-
 .slideContainer {
-  padding-left: 16%;
-  padding-right: 16%;
+  padding-left: 20%;
+  padding-right: 20%;
+  @include variables.mq(sp) {
+    padding-left: 16%;
+    padding-right: 16%;
+  }
 }
-
-.underListContainer {
+.largeContainer {
   position: relative;
   z-index: 1;
-  padding-left: var(--margin-common-list);
-  padding-right: var(--margin-common-list);
+  padding-left: var(--margin-large);
+  padding-right: var(--margin-large);
   @include variables.mq(sp) {
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+.smallContainer {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 832px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .onlySP {
@@ -79,4 +89,8 @@ img {
   @include variables.mq(sp) {
     display: none;
   }
+}
+
+.overFlowHidden {
+  overflow: hidden;
 }

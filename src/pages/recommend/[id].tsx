@@ -1,9 +1,7 @@
-import Link from "next/link";
-import Image from "next/image"
 import { client } from "@/libs/client";
 import { Recommend } from "@/types/recommend";
 import { NextSeo } from "next-seo";
-import FvBg from "@/components/modules/FvBg";
+import ArticleDetailPage from "@/components/templates/ArticleDetailPage";
 
 type Props = {
   recommend: Recommend;
@@ -28,26 +26,11 @@ export default function RecommendId({recommend}:Props) {
           ],
         }}
       />
-      <main>
-      <FvBg fvBgClass="underPage"/>
-        <div>
-          <h1>{recommend.name}</h1>
-          <p>{recommend.area}</p>
-          <p><a href={recommend.link}>店舗情報</a></p>
-          <div>
-            <Image
-              src={recommend.image.url}
-              alt={recommend.name}
-              height={528}
-              width={800}
-            />
-          </div>
-          <p>{recommend.body}</p>
-        </div>
-        <div>
-          <Link href="/recommend">一覧ページへ</Link>
-        </div>
-      </main>
+      <ArticleDetailPage
+        item={recommend}
+        heading={{ first: "Recom", second: "mend" }}
+        articleClass = "recommend"
+      />
     </>
   );
 };

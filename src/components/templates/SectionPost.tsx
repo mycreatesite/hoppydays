@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import styles from "@/styles/components/templates/SectionPost.module.scss";
 import Container from "../layouts/Container";
 import ButtonEl from "../elements/ButtonEl";
+import { splitTextWithSpan } from "../util/splitTextWithSpan";
 
 type Props = {
   children?: ReactNode;
@@ -19,13 +20,13 @@ type Props = {
 const SectionPost = ({ children, setting }: Props) => {
   return (
     <>
-      <section className={`${styles.post} ${setting.sectionClass}`}>
-        <Container containerClass="commonContainer">
+      <section className={`${styles.post} ${setting.sectionClass} js-scrollAddClass`}>
+        <Container containerClass="commonContainer overFlowHidden">
           <div className={`${styles.titleGroup}`}>
             <p className={`${styles.shoulder}`}>{setting.shoulder}</p>
-            <h2 className={`${styles.title}`}>
-              {setting.titleFirst}
-              <span>{setting.titleSecond}</span>
+            <h2 className={`${styles.title} js-scrollParallaxLtR`}>
+              {splitTextWithSpan(setting.titleFirst, 200)}
+              <span className={`${styles.outline}`}>{splitTextWithSpan(setting.titleSecond, 200)}</span>
             </h2>
           </div>
         </Container>
@@ -48,7 +49,7 @@ const SectionPost = ({ children, setting }: Props) => {
         </Container>
         <Image
           className={`${styles.bubble}`}
-          src="./common/img-bubble-white.svg"
+          src="/common/img-bubble-white.svg"
           alt=""
           height={92}
           width={74}

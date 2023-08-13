@@ -1,7 +1,7 @@
 import { client } from "@/libs/client";
 import { Nippo } from "@/types/nippo";
 import { NextSeo } from "next-seo";
-import ListPage from "@/components/pages/ListPage";
+import SectionListPage from "@/components/templates/SectionListPage";
 
 type Props = {
   nippos: Nippo[];
@@ -17,7 +17,7 @@ export default function NippoList({ nippos }: Props) {
           title: `日報│${process.env.NEXT_PUBLIC_SITE_NAME}`,
         }}
       />
-      <ListPage
+      <SectionListPage
         items={nippos}
         path="nippo"
         heading={{ first: "Nip", second: "po" }}

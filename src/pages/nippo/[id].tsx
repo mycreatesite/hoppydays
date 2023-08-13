@@ -1,9 +1,7 @@
-import Link from "next/link";
-import Image from 'next/image'
 import { client } from "@/libs/client";
 import { Nippo } from "@/types/nippo";
 import { NextSeo } from "next-seo";
-import FvBg from "@/components/modules/FvBg";
+import ArticleDetailPage from "@/components/templates/ArticleDetailPage";
 
 type Props = {
   nippo: Nippo;
@@ -27,26 +25,11 @@ export default function NippoId({nippo}:Props) {
           ],
         }}
       />
-      <main>
-        <FvBg fvBgClass="underPage"/>
-        <div>
-          <p>{nippo.date}</p>
-          <h1>{nippo.title}</h1>
-          <p>{nippo.name}</p>
-          <div>
-            <Image
-              src={nippo.image.url}
-              alt={nippo.title}
-              height={528}
-              width={800}
-            />
-          </div>
-          <p>{nippo.body}</p>
-        </div>
-        <div>
-          <Link href="/nippo">一覧ページへ</Link>
-        </div>
-      </main>
+      <ArticleDetailPage
+        item={nippo}
+        heading={{ first: "Nip", second: "po" }}
+        articleClass = "nippo"
+      />
     </>
   );
 };

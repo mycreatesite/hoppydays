@@ -14,32 +14,30 @@ type Props = {
 export default function Home({ recommends, nippos }: Props) {
   return (
     <>
-      <main>
-        <SectionMainvisual />
-        <SectionMessage />
-        <SectionPost
-          setting = {{
-            sectionClass: "recommend",
-            shoulder: "おすすめホッピー居酒屋",
-            titleFirst: "Recom",
-            titleSecond: "mend",
-            linkURL: "recommend"
-          }}
-        >
-          <Slider items={recommends} path="recommend"></Slider>
-        </SectionPost>
-        <SectionPost
-          setting = {{
-            sectionClass: "nippo",
-            shoulder: "ホッピー日報",
-            titleFirst: "Nip",
-            titleSecond: "po",
-            linkURL: "nippo"
-          }}
-        >
-          <Slider items={nippos} path="nippo"></Slider>
-        </SectionPost>
-      </main>
+      <SectionMainvisual />
+      <SectionMessage />
+      <SectionPost
+        setting = {{
+          sectionClass: "recommend",
+          shoulder: "おすすめホッピー居酒屋",
+          titleFirst: "Recom",
+          titleSecond: "mend",
+          linkURL: "recommend"
+        }}
+      >
+        <Slider items={recommends} path="recommend"></Slider>
+      </SectionPost>
+      <SectionPost
+        setting = {{
+          sectionClass: "nippo",
+          shoulder: "ホッピー日報",
+          titleFirst: "Nip",
+          titleSecond: "po",
+          linkURL: "nippo"
+        }}
+      >
+        <Slider items={nippos} path="nippo"></Slider>
+      </SectionPost>
     </>
   );
 }

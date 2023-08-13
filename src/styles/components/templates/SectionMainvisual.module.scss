@@ -1,4 +1,5 @@
 @use "../../variables";
+@use "../../keyframes";
 
 .mainvisual {
   position: relative;
@@ -21,6 +22,10 @@
     row-gap: 16px;
   }
   .copy {
+    .inner {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
     img {
       width: auto;
       max-width: none;
@@ -68,18 +73,20 @@
       line-height: 1.1;
       transform-origin: left bottom;
       transform: rotate(-90deg) translateY(100%);
+      padding-left: .75em;
       > span {
         font-weight: bold;
       }
       &::before {
         content: '';
-        display: inline-block;
-        vertical-align: middle;
-        width: 4px;
-        height: 4px;
-        border-radius: 50%;
+        position: absolute;
+        top: 5px;
+        right: 100%;
+        display: block;
+        width: 64px;
+        height: 1.5px;
         background-color: var(--color-text);
-        margin-right: 6px;
+        animation: more-expansion 2s ease-in-out infinite;
       }
     }
     .subcopy {
@@ -105,4 +112,70 @@
   @include variables.mq(sp) {
     bottom: -15px;
   }
+}
+
+// animations
+
+.copyGroup {
+  .copy01 {
+    img {
+      animation :infinity-scroll-right 70s infinite linear 0.5s both;
+    }
+  }
+  .copy02 {
+    img {
+      animation :infinity-scroll-left 80s infinite linear 0.5s both;
+    }
+  }
+  .copy03 {
+    img {
+      animation :infinity-scroll-right 110s infinite linear 0.5s both;
+    }
+  }
+}
+
+.copyGroup {
+  .copy {
+    overflow: hidden;
+    .inner {
+      transition: transform 2s cubic-bezier(0.87, 0, 0.13, 1);
+    }
+  }
+  .copy01 {
+    .inner {
+      transform: translateY(100%) rotate(4deg);
+      transform-origin: left top;
+    }
+  }
+  .copy02 {
+    .inner {
+      transform: translateY(100%) rotate(-4deg);
+      transform-origin: right top;
+    }
+  }
+  .copy03 {
+    .inner {
+      transform: translateY(100%) rotate(4deg);
+      transform-origin: left top;
+    }
+  }
+  [class*="is-ready"] & {
+    .copy {
+      .inner {
+        transform: translateY(0) rotate(0);
+      }
+    }
+  }
+}
+
+.bottomCopyGroup {
+  .more {
+    &::before {
+      animation: more-expansion 2s ease-in-out infinite;
+    }
+  }
+}
+
+.bubble {
+  animation: infinite float01 2s 1s both alternate ease-in-out;
 }

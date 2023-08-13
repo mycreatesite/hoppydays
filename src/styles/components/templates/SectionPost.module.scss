@@ -1,4 +1,5 @@
 @use "../../variables";
+@use "../../keyframes";
 
 .post {
   position: relative;
@@ -23,6 +24,7 @@
       bottom: -40px;
       transform: scaleX(-1);
       width: min(10dvw, 74px);
+      animation: infinite float02 2s both alternate ease-in-out;
       @include variables.mq(sp) {
         bottom: -20dvw;
       }
@@ -31,9 +33,10 @@
   &[class*="nippo"] {
     .bubble {
       position: absolute;
-      left: var(--margin-common);
+      left: var(--margin-small);
       bottom: 80px;
       width: min(10dvw, 57px);
+      animation: infinite float01 2s both alternate ease-in-out;
     }
   }
 }
@@ -73,7 +76,7 @@
     font-weight: 400;
     letter-spacing: -.04em;
     line-height: 1;
-    span {
+    .outline {
       color: var(--color-base);
       text-shadow:
         1.2px 1.2px 0 var(--color-text), -1.2px -1.2px 0 var(--color-text),
@@ -97,5 +100,34 @@
   @include variables.mq(sp) {
     text-align: center;
     margin-top: 64px;
+  }
+}
+
+//animation
+
+.post {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: 1s;
+  &[class*="is-active"] {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titleGroup {
+  .title {
+    transition: transform 1s ease-in-out;
+    span:not(.outline){
+      opacity: 0;
+      transition: opacity 1s;
+    }
+  }
+  [class*="is-active"] & {
+    .title {
+      span:not(.outline){
+        opacity: 1;
+      }
+    }
   }
 }

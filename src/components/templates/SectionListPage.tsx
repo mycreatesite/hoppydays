@@ -3,9 +3,10 @@ import Image from "next/image";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
 import FvBg from "@/components/modules/FvBg";
-import styles from "@/styles/components/pages/ListPage.module.scss";
+import styles from "@/styles/components/templates/SectionListPage.module.scss";
 import Container from "@/components/layouts/Container";
 import { sawarabiGothic } from "@/components/util/font";
+import dayjs from 'dayjs';
 
 type Props = {
   items: Recommend[] | Nippo[];
@@ -16,21 +17,21 @@ type Props = {
   };
 };
 
-export default function ListPage({ items, path, heading }: Props) {
+export default function SectionListPage({ items, path, heading }: Props) {
   return (
     <>
       <section className={`${styles.listPage}`}>
         <FvBg fvBgClass="underPage" />
-        <Container containerClass="underListContainer">
+        <Container containerClass="largeContainer">
           <h1 className={`${styles.heading}`}>
             {heading.first}
-            <span>{heading.second}</span>
+            <span className={`${styles.outline}`}>{heading.second}</span>
           </h1>
           <ul className={`${styles.list}`}>
             {items.map((item) => {
 
               const isNippo = "date" in item;
-              
+
               return (
                 <li className={`${styles.item}`} key={item.id}>
                   <Link href={`/${path}/${item.id}`}>
@@ -44,7 +45,7 @@ export default function ListPage({ items, path, heading }: Props) {
                     </div>
                     <div className={`${styles.content}`}>
                       {isNippo && (
-                        <time className={`${styles.date}`}>{item.date}</time>
+                        <time dateTime={item.date} className={`${styles.date}`}>{dayjs(item.date).format('YYYY.MMDD')}</time>
                       )}
                       <h3 className={`${styles.title} ${sawarabiGothic.className}`}>
                         {isNippo ? item.title : item.name}

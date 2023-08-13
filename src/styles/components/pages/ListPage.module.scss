@@ -1,0 +1,97 @@
+@use "../../variables";
+
+
+.listPage {
+  padding-top: 150px;
+  padding-bottom: 160px;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 400;
+  line-height: 1;
+  font-size: clamp(1.5rem,10dvw,4.5rem);
+  letter-spacing: -.04em;
+  margin-bottom: 160px;
+  @include variables.mq(sp) {
+    margin-bottom: 120px;
+  }
+  span {
+    color: #fff;
+    text-shadow:
+      1px 1px 0 var(--color-text), -1px -1px 0 var(--color-text),
+      -1px 1px 0 var(--color-text), 1px -1px 0 var(--color-text),
+      0px 1px 0 var(--color-text),  0 -1px 0 var(--color-text),
+      -1px 0 0 var(--color-text), 1px 0 0 var(--color-text);
+    @include variables.mq(sp) {
+      text-shadow:
+        0.5px 0.5px 0 var(--color-text), -0.5px -0.5px 0 var(--color-text),
+        -0.5px 0.5px 0 var(--color-text), 0.5px -0.5px 0 var(--color-text),
+        0px 0.5px 0 var(--color-text),  0 -0.5px 0 var(--color-text),
+        -0.5px 0 0 var(--color-text), 0.5px 0 0 var(--color-text);
+    }
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 64px;
+  @include variables.mq(tab) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: calc(40 / 1920 * 100dvw);
+    row-gap: calc(120 / 1920 * 100dvw);
+  }
+  @include variables.mq(pc) {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: calc(80 / 1920 * 100dvw);
+  }
+}
+
+.item {
+  .image {
+    aspect-ratio: 507 / 338;
+    border-radius: 24px;
+    overflow: hidden;
+    @include variables.mq(sp) {
+      border-radius: 12px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .content {
+    margin-top: 16px;
+    @include variables.mq(sp) {
+      margin-top: 8px;
+    }
+    .date {
+      color: var(--color-base-dark);
+      font-size: 1.125rem;
+      @include variables.mq(sp) {
+        font-size: 1rem;
+      }
+    }
+    .title {
+      font-size: 1.5rem;
+      line-height: 2;
+    }
+    .subtitle {
+      font-size: 1.125rem;
+    }
+    &::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 80px;
+      background-color: var(--color-text);
+      margin-top: 24px;
+      @include variables.mq(sp) {
+        width: 64px;
+        margin-top: 16px;
+      }
+    }
+  }
+}

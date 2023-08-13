@@ -1,86 +1,62 @@
-import Link from "next/link";
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
 import { client } from "@/libs/client";
 import { Recommend } from "@/types/recommend";
 import { Nippo } from "@/types/nippo";
-import Mainvisual from "@/components/Mainvisual";
-
-const inter = Inter({ subsets: ['latin'] })
+import SectionMainvisual from "@/components/templates/SectionMainvisual";
+import SectionMessage from "@/components/templates/SectionMessage";
+import SectionPost from "@/components/templates/SectionPost";
+import Slider from "@/components/modules/Slider";
 
 type Props = {
   recommends: Recommend[];
   nippos: Nippo[];
 };
 
-export default function Home({recommends, nippos}:Props) {
+export default function Home({ recommends, nippos }: Props) {
   return (
     <>
       <main>
-        <Mainvisual/>
-        <div>
-          <ul>
-            {recommends.map((recommend) => (
-              <li key={recommend.id}>
-                <Link href={`/recommend/${recommend.id}`}>
-                  <div>
-                    <Image
-                      src={recommend.image.url}
-                      alt={recommend.name}
-                      height={338}
-                      width={507}
-                    />
-                  </div>
-                  <h2>{recommend.name}</h2>
-                  <p>{recommend.area}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div><Link href={`/recommend`}>一覧ページへ</Link></div>
-
-        <div>
-          <ul>
-            {nippos.map((nippo) => (
-              <li key={nippo.id}>
-                <Link href={`/nippo/${nippo.id}`}>
-                  <div>
-                    <Image
-                      src={nippo.image.url}
-                      alt={nippo.title}
-                      height={338}
-                      width={507}
-                    />
-                  </div>
-                  <p>{nippo.date}</p>
-                  <h2>{nippo.title}</h2>
-                  <p>{nippo.name}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div><Link href={`/nippo`}>一覧ページへ</Link></div>
-
+        <SectionMainvisual />
+        <SectionMessage />
+        <SectionPost
+          setting = {{
+            sectionClass: "recommend",
+            shoulder: "おすすめホッピー居酒屋",
+            titleFirst: "Recom",
+            titleSecond: "mend",
+            linkURL: "recommend"
+          }}
+        >
+          <Slider items={recommends} path="recommend"></Slider>
+        </SectionPost>
+        <SectionPost
+          setting = {{
+            sectionClass: "nippo",
+            shoulder: "ホッピー日報",
+            titleFirst: "Nip",
+            titleSecond: "po",
+            linkURL: "nippo"
+          }}
+        >
+          <Slider items={nippos} path="nippo"></Slider>
+        </SectionPost>
       </main>
     </>
-  )
+  );
 }
 
 export const getStaticProps = async () => {
   const recommendData = await client.get({
     endpoint: "recommend",
-    queries: { limit: 2, orders: '-publishedAt' }
+    queries: { limit: 3, orders: "-publishedAt" },
   });
   const nippoData = await client.get({
     endpoint: "nippo",
-    queries: { limit: 2, orders: '-publishedAt' }
+    queries: { limit: 3, orders: "-publishedAt" },
   });
   return {
     props: {
       recommends: recommendData.contents,
-      nippos: nippoData.contents
+      nippos: nippoData.contents,
     },
   };
 };

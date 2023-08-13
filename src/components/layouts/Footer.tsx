@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from '@/components/layouts/Container'
-import styles from "@/styles/Footer.module.scss";
+import styles from "@/styles/components/layouts/Footer.module.scss";
 
 const Footer = () => {
   return (

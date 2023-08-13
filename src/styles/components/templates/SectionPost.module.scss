@@ -1,0 +1,101 @@
+@use "../../variables";
+
+.post {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  &[class*="nippo"] {
+    padding-bottom: 160px;
+  }
+  @include variables.mq(sp) {
+    &[class*="recommend"] {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.post {
+  &[class*="recommend"] {
+    .bubble {
+      position: absolute;
+      left: 50%;
+      bottom: -40px;
+      transform: scaleX(-1);
+      width: min(10dvw, 74px);
+      @include variables.mq(sp) {
+        bottom: -20dvw;
+      }
+    }
+  }
+  &[class*="nippo"] {
+    .bubble {
+      position: absolute;
+      left: var(--margin-common);
+      bottom: 80px;
+      width: min(10dvw, 57px);
+    }
+  }
+}
+
+.sliderOuter {
+  overflow-x: hidden;
+}
+
+.titleGroup {
+  margin-bottom: 80px;
+  @include variables.mq(sp) {
+    margin-bottom: 56px;
+  }
+  .shoulder {
+    color: var(--color-base-dark);
+    font-size: 1.125rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    align-items: center;
+    column-gap: 8px;
+    padding-left: 8px;
+    @include variables.mq(sp) {
+      font-size: .875rem;
+    }
+    &::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--color-base-dark);
+      display: block;
+    }
+  }
+  .title {
+    font-size: clamp(3.75rem, 10dvw, 10rem);
+    font-weight: 400;
+    letter-spacing: -.04em;
+    line-height: 1;
+    span {
+      color: var(--color-base);
+      text-shadow:
+        1.2px 1.2px 0 var(--color-text), -1.2px -1.2px 0 var(--color-text),
+        -1.2px 1.2px 0 var(--color-text), 1.2px -1.2px 0 var(--color-text),
+        0px 1.2px 0 var(--color-text),  0 -1.2px 0 var(--color-text),
+        -1.2px 0 0 var(--color-text), 1.2px 0 0 var(--color-text);
+      @include variables.mq(sp) {
+        text-shadow:
+          0.5px 0.5px 0 var(--color-text), -0.5px -0.5px 0 var(--color-text),
+          -0.5px 0.5px 0 var(--color-text), 0.5px -0.5px 0 var(--color-text),
+          0px 0.5px 0 var(--color-text),  0 -0.5px 0 var(--color-text),
+          -0.5px 0 0 var(--color-text), 0.5px 0 0 var(--color-text);
+      }
+    }
+  }
+}
+
+.link {
+  text-align: right;
+  margin-top: 80px;
+  @include variables.mq(sp) {
+    text-align: center;
+    margin-top: 64px;
+  }
+}

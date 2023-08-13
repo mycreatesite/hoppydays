@@ -1,14 +1,13 @@
-import Link from "next/link";
-import Image from 'next/image'
 import { client } from "@/libs/client";
 import { Nippo } from "@/types/nippo";
 import { NextSeo } from "next-seo";
+import ListPage from "@/components/pages/ListPage";
 
 type Props = {
   nippos: Nippo[];
 };
 
-export default function NippoList({nippos}:Props) {
+export default function NippoList({ nippos }: Props) {
   return (
     <>
       <NextSeo
@@ -18,30 +17,14 @@ export default function NippoList({nippos}:Props) {
           title: `日報│${process.env.NEXT_PUBLIC_SITE_NAME}`,
         }}
       />
-      <div>
-        <ul>
-          {nippos.map((nippo) => (
-            <li key={nippo.id}>
-              <Link href={`/nippo/${nippo.id}`}>
-                <div>
-                  <Image
-                    src={nippo.image.url}
-                    alt={nippo.name}
-                    height={338}
-                    width={507}
-                  />
-                </div>
-                <p>{nippo.date}</p>
-                <h2>{nippo.title}</h2>
-                <p>{nippo.name}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ListPage
+        items={nippos}
+        path="nippo"
+        heading={{ first: "Nip", second: "po" }}
+      />
     </>
   );
-};
+}
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "nippo" });

@@ -3,6 +3,7 @@ import Image from "next/image"
 import { client } from "@/libs/client";
 import { Recommend } from "@/types/recommend";
 import { NextSeo } from "next-seo";
+import FvBg from "@/components/modules/FvBg";
 
 type Props = {
   recommend: Recommend;
@@ -28,6 +29,7 @@ export default function RecommendId({recommend}:Props) {
         }}
       />
       <main>
+      <FvBg fvBgClass="underPage"/>
         <div>
           <h1>{recommend.name}</h1>
           <p>{recommend.area}</p>

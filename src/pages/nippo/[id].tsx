@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { client } from "@/libs/client";
 import { Nippo } from "@/types/nippo";
 import { NextSeo } from "next-seo";
+import FvBg from "@/components/modules/FvBg";
 
 type Props = {
   nippo: Nippo;
@@ -27,6 +28,7 @@ export default function NippoId({nippo}:Props) {
         }}
       />
       <main>
+        <FvBg fvBgClass="underPage"/>
         <div>
           <p>{nippo.date}</p>
           <h1>{nippo.title}</h1>

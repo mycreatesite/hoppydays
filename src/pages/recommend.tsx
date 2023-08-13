@@ -1,15 +1,13 @@
-import Link from "next/link";
-import Image from "next/image";
 import { client } from "@/libs/client";
 import { Recommend } from "@/types/recommend";
 import { NextSeo } from "next-seo";
+import ListPage from "@/components/pages/ListPage";
 
 type Props = {
   recommends: Recommend[];
 };
 
-
-export default function RecommendList({recommends}:Props) {
+export default function RecommendList({ recommends }: Props) {
   return (
     <>
       <NextSeo
@@ -19,29 +17,14 @@ export default function RecommendList({recommends}:Props) {
           title: `おすすめホッピー居酒屋│${process.env.NEXT_PUBLIC_SITE_NAME}`,
         }}
       />
-      <div>
-        <ul>
-          {recommends.map((recommend) => (
-            <li key={recommend.id}>
-              <Link href={`/recommend/${recommend.id}`}>
-                <div>
-                  <Image
-                    src={recommend.image.url}
-                    alt={recommend.name}
-                    height={338}
-                    width={507}
-                  />
-                </div>
-                <h2>{recommend.name}</h2>
-                <p>{recommend.area}</p>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ListPage
+        items={recommends}
+        path="recommend"
+        heading={{ first: "Recom", second: "mend" }}
+      />
     </>
   );
-};
+}
 
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "recommend" });

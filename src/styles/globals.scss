@@ -1,10 +1,12 @@
-@use "./include/variables";
+@use "./variables";
 
 :root {
   --color-base: #FFE349;
   --color-base-dark: #947D00;
   --color-text: #222222;
   --z-index-header: 50;
+  --margin-common: calc(80 / 1920 * 100%);
+  --margin-common-list: calc(160 / 1920 * 100%);
 }
 
 * {
@@ -41,10 +43,40 @@ img {
 }
 
 .commonContainer {
-  padding-left: calc(80 / 1920 * 100%);
-  padding-right: calc(80 / 1920 * 100%);
+  padding-left: var(--margin-common);
+  padding-right: var(--margin-common);
   @include variables.mq(sp) {
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+.slideContainer {
+  padding-left: 16%;
+  padding-right: 16%;
+}
+
+.underListContainer {
+  position: relative;
+  z-index: 1;
+  padding-left: var(--margin-common-list);
+  padding-right: var(--margin-common-list);
+  @include variables.mq(sp) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.onlySP {
+  display: none;
+  @include variables.mq(sp) {
+    display: block;
+  }
+}
+
+.onlyPC {
+  display: block;
+  @include variables.mq(sp) {
+    display: none;
   }
 }

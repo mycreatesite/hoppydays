@@ -1,0 +1,39 @@
+@use "../../variables";
+
+.btn {
+  position: relative;
+  border: 1px solid currentColor;
+  border-radius: 100px;
+  padding-left: 80px;
+  padding-right: 80px;
+  display: inline-block;
+  line-height: 1.5;
+  &[class*="size-default"] {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include variables.mq(sp) {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+  &[class*="size-small"] {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  &[class*="right"] {
+    .icon {
+      right: 16px;
+    }
+  }
+  &[class*="left"] {
+    .icon {
+      left: 16px;
+    }
+  }
+  .icon {
+    position: absolute;
+    top: calc(50% - 10px);
+    width: 20px;
+    height: 20px;
+  }
+}

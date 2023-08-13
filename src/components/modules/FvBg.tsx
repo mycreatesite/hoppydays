@@ -1,4 +1,4 @@
-import styles from "@/styles/FvBg.module.scss";
+import styles from "@/styles/components/modules/FvBg.module.scss";
 import Image from "next/image";
 
 type Props = {

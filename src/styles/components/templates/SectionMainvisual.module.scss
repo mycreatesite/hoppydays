@@ -1,4 +1,4 @@
-@use "./include/variables";
+@use "../../variables";
 
 .mainvisual {
   position: relative;
@@ -18,7 +18,7 @@
   width: 100%;
   overflow-x: hidden;
   @include variables.mq(sp) {
-    row-gap: 8px;
+    row-gap: 16px;
   }
   .copy {
     img {
@@ -64,7 +64,7 @@
       padding-bottom: 16px;
     }
     .more {
-      font-size: 12px;
+      font-size: .75rem;
       line-height: 1.1;
       transform-origin: left bottom;
       transform: rotate(-90deg) translateY(100%);
@@ -86,7 +86,7 @@
       font-size: 1.125rem;
       padding-bottom: 40px;
       @include variables.mq(sp) {
-        font-size: 14px;
+        font-size: .875rem;
         padding-bottom: 0;
       }
       > span {
@@ -101,8 +101,8 @@
   position: absolute;
   bottom: -40px;
   left: calc(110 / 1920 * 100%);
+  width: min(14dvw, 174px);
   @include variables.mq(sp) {
-    width: 14dvw;
     bottom: -15px;
   }
 }

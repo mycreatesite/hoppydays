@@ -1,0 +1,39 @@
+@use "../../variables";
+
+.message {
+  position: relative;
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+
+.messageGroup {
+  text-align: center;
+  display: grid;
+  row-gap: 40px;
+  @include variables.mq(sp) {
+    row-gap: 24px;
+  }
+  .ja {
+    font-size: 2rem;
+    letter-spacing: .16em;
+    @include variables.mq(sp) {
+      font-size: max(4dvw, .875rem);
+    }
+  }
+  .en {
+    font-size: 1rem;
+    color: var(--color-base-dark);
+    line-height: 1.5;
+    @include variables.mq(sp) {
+      font-size: max(.9dvw, .625rem);
+    }
+  }
+}
+
+.bubble {
+  position: absolute;
+  right: var(--margin-common);
+  bottom: 0;
+  transform: scaleX(-1);
+  width: min(14dvw, 107px);
+}

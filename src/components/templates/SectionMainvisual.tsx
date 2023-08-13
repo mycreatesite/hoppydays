@@ -1,13 +1,13 @@
 import Image from "next/image";
-import FvBg from "./FvBg";
-import styles from "@/styles/Mainvisual.module.scss";
-import Container from "./layouts/Container";
+import FvBg from "../modules/FvBg";
+import styles from "@/styles/components/templates/SectionMainvisual.module.scss";
+import Container from "../layouts/Container";
 
 type Props = {
   fvBgClass?: string;
 };
 
-const Mainvisual = ({ fvBgClass }: Props) => {
+const SectionMainvisual = ({ fvBgClass }: Props) => {
   return (
     <section className={`${styles.mainvisual}`}>
       <FvBg fvBgClass="" />
@@ -57,4 +57,4 @@ const Mainvisual = ({ fvBgClass }: Props) => {
     </section>
   );
 };
-export default Mainvisual;
+export default SectionMainvisual;

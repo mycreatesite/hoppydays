@@ -47,13 +47,15 @@ const SectionPost = ({ children, setting }: Props) => {
             </ButtonEl>
           </div>
         </Container>
-        <Image
-          className={`${styles.bubble}`}
-          src="/common/img-bubble-white.svg"
-          alt=""
-          height={92}
-          width={74}
-        />
+        <div className={`${styles.bubbleOuter} js-scrollParallax-bubble`}>
+          <Image
+            className={`${styles.bubble}`}
+            src="/common/img-bubble-white.svg"
+            alt=""
+            height={92}
+            width={74}
+          />
+        </div>
       </section>
     </>
   );

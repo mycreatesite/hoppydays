@@ -9,7 +9,7 @@ const SectionMessage = () => {
   return (
     <section className={`${styles.message} js-scrollAddClass`}>
       <Container containerClass="commonContainer">
-        <div className={`${styles.messageGroup} js-scrollParallax-message`}>
+        <div className={`${styles.messageGroup}`}>
           <p className={`${styles.ja} ${sawarabiGothic.className}`}>
             {splitTextWithSpan("低カロリー・プリン体ゼロで健康志向")}
             <br />
@@ -30,13 +30,15 @@ const SectionMessage = () => {
           </p>
         </div>
       </Container>
-      <Image
-        className={`${styles.bubble}`}
-        src="/common/img-bubble-white.svg"
-        alt=""
-        height={132}
-        width={107}
-      />
+      <div className={`${styles.bubbleOuter} js-scrollParallax-bubble`}>
+        <Image
+          className={`${styles.bubble}`}
+          src="/common/img-bubble-white.svg"
+          alt=""
+          height={132}
+          width={107}
+        />
+      </div>
     </section>
   );
 };

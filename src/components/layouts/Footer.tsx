@@ -5,14 +5,13 @@ import styles from "@/styles/components/layouts/Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer className={`${styles.footer}`}>
+    <footer className={`${styles.footer} js-scrollAddClass`}>
       <div className={`${styles.bgLogo}`}>
         <Image
           src="/common/logo-yellow.svg"
           alt=""
           height={218}
           width={1536}
-          className="js-scrollParallax-footer"
         />
       </div>
       <Container containerClass="commonContainer">

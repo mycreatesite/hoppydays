@@ -37,13 +37,11 @@
   bottom: 0;
   transform: scaleX(-1);
   width: min(14dvw, 107px);
-  animation: infinite float02 2s both alternate ease-in-out;
 }
 
 //animations
 
 .messageGroup {
-  transition: transform 1s cubic-bezier(0, 0.55, 0.45, 1);
   .ja {
     span {
       display: inline-block;
@@ -68,5 +66,18 @@
       transform: translateY(0);
       opacity: 1;
     }
+  }
+}
+
+.bubbleOuter {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+  transition: transform 5s cubic-bezier(0, 0.55, 0.45, 1),opacity 5s;
+  [class*="is-active"] & {
+    opacity: 1;
+  }
+  .bubble {
+    animation: infinite float02 2s both alternate ease-in-out;
   }
 }

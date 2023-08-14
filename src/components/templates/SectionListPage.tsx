@@ -20,7 +20,7 @@ type Props = {
 export default function SectionListPage({ items, path, heading }: Props) {
   return (
     <>
-      <section className={`${styles.listPage}`}>
+      <section className={`${styles.listPage} js-scrollAddClass`}>
         <FvBg fvBgClass="underPage" />
         <Container containerClass="largeContainer">
           <h1 className={`${styles.heading}`}>

@@ -6,7 +6,7 @@ export const scrollAddClass = () => {
   document.querySelectorAll(".js-scrollAddClass").forEach((el) => {
     ScrollTrigger.create({
       trigger: el,
-      start: "top 60%",
+      start: "top 65%",
       toggleClass: { targets: el, className: "is-active" },
       once: true,
       // markers: true

@@ -24,7 +24,6 @@
       bottom: -40px;
       transform: scaleX(-1);
       width: min(10dvw, 74px);
-      animation: infinite float02 2s both alternate ease-in-out;
       @include variables.mq(sp) {
         bottom: -20dvw;
       }
@@ -36,7 +35,6 @@
       left: var(--margin-small);
       bottom: 80px;
       width: min(10dvw, 57px);
-      animation: infinite float01 2s both alternate ease-in-out;
     }
   }
 }
@@ -105,16 +103,6 @@
 
 //animation
 
-.post {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: 1s;
-  &[class*="is-active"] {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .titleGroup {
   .title {
     transition: transform 10s cubic-bezier(0, 0.55, 0.45, 1);
@@ -128,6 +116,29 @@
       span:not(.outline){
         opacity: 1;
       }
+    }
+  }
+}
+
+.bubbleOuter {
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+  transition: transform 5s cubic-bezier(0, 0.55, 0.45, 1), opacity 5s;
+  [class*="is-active"] & {
+    opacity: 1;
+  }
+}
+
+.post {
+  &[class*="recommend"] {
+    .bubble {
+      animation: infinite float02 2s both alternate ease-in-out;
+    }
+  }
+  &[class*="nippo"] {
+    .bubble {
+      animation: infinite float01 2s both alternate ease-in-out;
     }
   }
 }

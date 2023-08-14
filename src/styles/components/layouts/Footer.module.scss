@@ -68,6 +68,12 @@
 
 .bgLogo {
   img {
-    transition: transform 10s cubic-bezier(0, 0.55, 0.45, 1);
+    transform: translateY(-100%);
+    transition: transform 1.25s cubic-bezier(0.87, 0, 0.13, 1);
+  }
+  [class*="is-active"] & {
+    img {
+      transform: translateY(0);
+    }
   }
 }

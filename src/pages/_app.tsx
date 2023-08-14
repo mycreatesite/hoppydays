@@ -10,7 +10,7 @@ import { topPageBodyReady } from "@/components/util/topPageBodyReady";
 import Layout from "@/components/layouts/Layout";
 import "@acab/reset.css";
 import "@/styles/globals.scss";
-import { FontGlobal } from "@/components/util/fontGlobal";
+import { FontGlobal } from "@/components/util/FontGlobal";
 
 export default function App({ Component, pageProps }: AppProps) {
 

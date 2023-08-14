@@ -68,6 +68,6 @@
 
 .bgLogo {
   img {
-    transition: transform 1s ease-in-out;
+    transition: transform 10s cubic-bezier(0, 0.55, 0.45, 1);
   }
 }

@@ -14,18 +14,30 @@ export const scrollAddClass = () => {
   });
 };
 
-export const scrollParallaxLtR = () => {
-  gsap.utils.toArray(".js-scrollParallaxLtR").forEach((target) => {
-    gsap.fromTo(target as gsap.TweenTarget, {
-      x: -50,
-    },{
-      x: 50,
-      scrollTrigger: {
-        trigger: target as gsap.DOMTarget,
-        start: "top 100%",
-        end: "bottom 0%",
-        scrub: true,
+export const scrollParallax = (
+  className: string,
+  axis: "x" | "y",
+  from: number,
+  to: number,
+  start: string = "100%",
+  end: string = "0%"
+) => {
+  gsap.utils.toArray(className).forEach((el) => {
+    gsap.fromTo(
+      el as gsap.TweenTarget,
+      {
+        [axis]: from,
       },
-    });
+      {
+        [axis]: to,
+        scrollTrigger: {
+          trigger: el as gsap.DOMTarget,
+          start: `top ${start}`,
+          end: `bottom ${end}`,
+          scrub: true,
+          // markers: true
+        },
+      }
+    );
   });
 };

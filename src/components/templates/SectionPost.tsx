@@ -24,7 +24,7 @@ const SectionPost = ({ children, setting }: Props) => {
         <Container containerClass="commonContainer overFlowHidden">
           <div className={`${styles.titleGroup}`}>
             <p className={`${styles.shoulder}`}>{setting.shoulder}</p>
-            <h2 className={`${styles.title} js-scrollParallaxLtR`}>
+            <h2 className={`${styles.title} js-scrollParallax-post`}>
               {splitTextWithSpan(setting.titleFirst, 200)}
               <span className={`${styles.outline}`}>{splitTextWithSpan(setting.titleSecond, 200)}</span>
             </h2>

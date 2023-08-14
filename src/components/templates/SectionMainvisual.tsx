@@ -13,7 +13,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
     <section className={`${styles.mainvisual}`}>
       <FvBg fvBgClass="" />
       <div className={`${styles.content}`}>
-        <div className={`${styles.copyGroup}`}>
+        <div className={`${styles.copyGroup} js-scrollParallax-mainLogo`}>
           <div className={`${styles.copy} ${styles.copy01}`}>
             <div className={`${styles.inner}`}>
               <Image
@@ -64,13 +64,15 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
           </div>
         </div>
       </div>
-      <Image
-        className={`${styles.bubble}`}
-        src="/common/img-bubble-white.svg"
-        alt=""
-        height={215}
-        width={174}
-      />
+      <div className={`${styles.bubbleOuter} js-scrollParallax-bubble`}>
+        <Image
+          className={`${styles.bubble}`}
+          src="/common/img-bubble-white.svg"
+          alt=""
+          height={215}
+          width={174}
+        />
+      </div>
       <div className={`${styles.bottomCopy}`}>
         <Container containerClass="commonContainer">
           <div className={styles.bottomCopyGroup}>

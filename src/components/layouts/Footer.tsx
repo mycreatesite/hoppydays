@@ -12,7 +12,7 @@ const Footer = () => {
           alt=""
           height={218}
           width={1536}
-          className="js-scrollParallaxLtR"
+          className="js-scrollParallax-footer"
         />
       </div>
       <Container containerClass="commonContainer">

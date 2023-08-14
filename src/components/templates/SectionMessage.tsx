@@ -9,7 +9,7 @@ const SectionMessage = () => {
   return (
     <section className={`${styles.message} js-scrollAddClass`}>
       <Container containerClass="commonContainer">
-        <div className={`${styles.messageGroup}`}>
+        <div className={`${styles.messageGroup} js-scrollParallax-message`}>
           <p className={`${styles.ja} ${sawarabiGothic.className}`}>
             {splitTextWithSpan("低カロリー・プリン体ゼロで健康志向")}
             <br />

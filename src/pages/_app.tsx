@@ -10,8 +10,7 @@ import { topPageBodyReady } from "@/components/util/topPageBodyReady";
 import Layout from "@/components/layouts/Layout";
 import "@acab/reset.css";
 import "@/styles/globals.scss";
-import { playfairDisplay } from "@/components/util/font";
-import { sawarabiGothic } from "@/components/util/font";
+import { FontGlobal } from "@/components/util/fontGlobal";
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -24,17 +23,12 @@ export default function App({ Component, pageProps }: AppProps) {
     scrollParallax(".js-scrollParallax-mainLogo", "y", 0, 150, "20%", "0%");
     scrollParallax(".js-scrollParallax-bubble", "y", 150, -150);
     scrollParallax(".js-scrollParallax-post", "x", -50, 50);
-
+    
   }, [router.pathname]);
 
   return (
     <>
-      <style jsx global>{`
-        body {
-          font-family: ${playfairDisplay.style.fontFamily},
-            ${sawarabiGothic.style.fontFamily}, serif;
-        }
-      `}</style>
+      <FontGlobal />
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

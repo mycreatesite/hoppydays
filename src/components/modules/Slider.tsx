@@ -6,7 +6,11 @@ import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
 import styles from "@/styles/components/modules/Slider.module.scss";
 import { sawarabiGothic } from "../util/font";
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc"
+import timezone from "dayjs/plugin/timezone"
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 type Props = {
   items: Recommend[] | Nippo[];
@@ -49,7 +53,7 @@ const Slider = ({ items, path }: Props) => {
                 />
               </div>
               <div className={`${styles.content}`}>
-                {isNippo && <time dateTime={item.date} className={`${styles.date}`}>{dayjs(item.date).format('YYYY.MMDD')}</time>}
+                {isNippo && <time dateTime={item.date} className={`${styles.date}`}>{dayjs(item.date).tz('Asia/Tokyo').format('YYYY.MMDD')}</time>}
                 {isNippo ? (
                   <h3 className={`${styles.title} ${sawarabiGothic.className}`}>{item.title}</h3>
                 ) : (

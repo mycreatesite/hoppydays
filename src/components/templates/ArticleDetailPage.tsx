@@ -6,8 +6,12 @@ import FvBg from "@/components/modules/FvBg";
 import styles from "@/styles/components/templates/ArticleDetailPage.module.scss";
 import ButtonEl from "@/components/elements/ButtonEl";
 import Container from "@/components/layouts/Container";
-import dayjs from "dayjs";
 import { sawarabiGothic } from "@/components/util/font";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc"
+import timezone from "dayjs/plugin/timezone"
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 type Props = {
   item: Recommend | Nippo;
@@ -38,7 +42,7 @@ export default function ArticleDetailPage({
             <div className={`${styles.group}`}>
               {isNippo && (
                 <time dateTime={item.date} className={`${styles.date}`}>
-                  {dayjs(item.date).format("YYYY.MMDD")}
+                  {dayjs(item.date).tz('Asia/Tokyo').format("YYYY.MMDD")}
                 </time>
               )}
               <h1 className={`${styles.title} ${sawarabiGothic.className}`}>

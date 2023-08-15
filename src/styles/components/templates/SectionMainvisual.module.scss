@@ -30,15 +30,7 @@
       width: auto;
       max-width: none;
       display: block;
-      @include variables.mq(sp) {
-        height: 6vh;
-      }
-      @include variables.mq(tab) {
-        height: 8vh;
-      }
-      @include variables.mq(pc) {
-        height: 10vh;
-      }
+      height: clamp(2.75rem, 5.75dvmax, 7rem);
     }
   }
   .copy01 {

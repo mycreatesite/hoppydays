@@ -29,7 +29,6 @@ export default function ArticleDetailPage({
   articleClass,
 }: Props) {
   const isNippo = "date" in item;
-  console.log(item.body)
   return (
     <>
       <article className={`${styles.detailPage} ${articleClass} js-scrollAddClass`}>

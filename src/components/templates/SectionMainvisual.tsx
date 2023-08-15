@@ -20,13 +20,15 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 src="/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
-                width={5571}
+                width={5480}
+                loading="eager"
               />
               <Image
                 src="/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
-                width={5571}
+                width={5480}
+                loading="eager"
               />
             </div>
           </div>
@@ -36,13 +38,15 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 src="/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
-                width={5571}
+                width={5480}
+                loading="eager"
               />
               <Image
                 src="/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
-                width={5571}
+                width={5480}
+                loading="eager"
               />
             </div>
           </div>
@@ -52,13 +56,15 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 src="/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
-                width={5571}
+                width={5480}
+                loading="eager"
               />
               <Image
                 src="/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
-                width={5571}
+                width={5480}
+                loading="eager"
               />
             </div>
           </div>
@@ -71,6 +77,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
           alt=""
           height={215}
           width={174}
+          loading="eager"
         />
       </div>
       <div className={`${styles.bottomCopy}`}>

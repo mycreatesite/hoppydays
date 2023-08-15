@@ -21,6 +21,7 @@ const Header = () => {
                   alt={process.env.NEXT_PUBLIC_SITE_NAME as string}
                   height={30}
                   width={212}
+                  loading="eager"
                 />
               </Link>
             </h1>
@@ -32,6 +33,7 @@ const Header = () => {
                   alt={process.env.NEXT_PUBLIC_SITE_NAME as string}
                   height={30}
                   width={212}
+                  loading="eager"
                 />
               </Link>
             </div>

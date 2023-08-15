@@ -10,7 +10,7 @@ const SEO = {
     url: process.env.NEXT_PUBLIC_SITE_URL,
     images: [
       {
-        url: "https://www.example.ie/og-image-01.jpg",
+        url: "https://hoppydays.vercel.app/ogp.jpg",
         width: 1200,
         height: 630,
         alt: process.env.NEXT_PUBLIC_SITE_NAME,

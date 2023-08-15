@@ -44,3 +44,13 @@
     margin-top: 16px;
   }
 }
+
+//animations
+
+.header {
+  opacity: 0;
+  transition: opacity 1s;
+  &[class*="is-active"] {
+    opacity: 1;
+  }
+}

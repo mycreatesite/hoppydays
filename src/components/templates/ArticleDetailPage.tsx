@@ -7,6 +7,7 @@ import styles from "@/styles/components/templates/ArticleDetailPage.module.scss"
 import ButtonEl from "@/components/elements/ButtonEl";
 import Container from "@/components/layouts/Container";
 import { sawarabiGothic } from "@/components/util/font";
+import { splitTextWithSpan } from "../util/splitTextWithSpan";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc"
 import timezone from "dayjs/plugin/timezone"
@@ -28,15 +29,15 @@ export default function ArticleDetailPage({
   articleClass,
 }: Props) {
   const isNippo = "date" in item;
-
+  console.log(item.body)
   return (
     <>
-      <article className={`${styles.detailPage} ${articleClass}`}>
+      <article className={`${styles.detailPage} ${articleClass} js-scrollAddClass`}>
         <FvBg fvBgClass="underPage" />
         <Container containerClass="smallContainer">
           <p className={`${styles.heading}`}>
-            {heading.first}
-            <span className={`${styles.outline}`}>{heading.second}</span>
+            {splitTextWithSpan(heading.first, 200)}
+            <span className={`${styles.outline}`}>{splitTextWithSpan(heading.second, 200)}</span>
           </p>
           <div className={`${styles.content}`}>
             <div className={`${styles.group}`}>
@@ -69,9 +70,10 @@ export default function ArticleDetailPage({
                 alt={item.name}
                 height={528}
                 width={800}
+                loading = 'eager'
               />
             </div>
-            <p className={`${styles.body}`}>{item.body}</p>
+            <p className={`${styles.body}`} dangerouslySetInnerHTML={{ __html: item.body.replace(/\r?\n/g, '<br>') }} />
           </div>
           <div className={`${styles.link}`}>
             <ButtonEl

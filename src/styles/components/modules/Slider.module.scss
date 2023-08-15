@@ -58,6 +58,7 @@
   overflow: visible;
   .slide {
     width: 100%;
+    user-select: none;
     @include variables.mq(pc) {
       width: 80%;
     }

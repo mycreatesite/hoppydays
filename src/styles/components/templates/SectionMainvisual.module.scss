@@ -161,7 +161,14 @@
   }
 }
 
+//animations
+
 .bottomCopyGroup {
+  opacity: 0;
+  transition: opacity 1s;
+  [class*="is-ready"] & {
+    opacity: 1;
+  }
   .more {
     &::before {
       animation: more-expansion 2s ease-in-out infinite;

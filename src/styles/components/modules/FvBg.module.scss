@@ -38,13 +38,10 @@
     .bubble {
       position: absolute;
       right: 10%;
+      top: 0;
       @include variables.mq(sp) {
-        top: 3dvw;
         width: 14dvw;
         height: auto;
-      }
-      @include variables.mq(tab) {
-        top: 3dvw;
       }
       @include variables.mq(pcxl) {
         top: -5dvw;

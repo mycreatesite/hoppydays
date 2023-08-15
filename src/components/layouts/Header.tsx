@@ -10,7 +10,7 @@ const Header = () => {
   const isTopPage = router.pathname === "/";
 
   return (
-    <header className={`${styles.header}`}>
+    <header className={`${styles.header} js-scrollAddClass`}>
       <Container containerClass="commonContainer">
         <div className={`${styles.content}`}>
           { isTopPage ? (

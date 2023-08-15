@@ -95,3 +95,25 @@
     margin-top: 80px;
   }
 }
+
+//animations
+
+.heading {
+  span:not(.outline){
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  [class*="is-active"] & {
+    span:not(.outline){
+      opacity: 1;
+    }
+  }
+}
+
+.content {
+  opacity: 0;
+  transition: opacity 1.5s;
+  [class*="is-active"] & {
+    opacity: 1;
+  }
+}

@@ -124,6 +124,12 @@
   }
 }
 
+.sliderOuter {
+  [class*="slideContainer"] {
+    transition: transform 10s cubic-bezier(0, 0.55, 0.45, 1);
+  }
+}
+
 .bubbleOuter {
   position: relative;
   z-index: -1;

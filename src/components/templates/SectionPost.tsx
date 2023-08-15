@@ -31,7 +31,7 @@ const SectionPost = ({ children, setting }: Props) => {
           </div>
         </Container>
         <div className={`${styles.sliderOuter}`}>
-          <Container containerClass="slideContainer">
+          <Container containerClass="slideContainer js-scrollParallax-slideContainer">
             {children}
           </Container>
         </div>

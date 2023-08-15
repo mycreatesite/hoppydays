@@ -70,10 +70,14 @@
     }
   }
   .title {
-    font-size: clamp(3.75rem, 10dvmax, 9rem);
+    font-size: clamp(3.75rem, 9dvmax, 8.5rem);
     font-weight: 400;
     letter-spacing: -.04em;
     line-height: 1;
+    white-space: nowrap;
+    @include variables.mq(sp) {
+      font-size: max(10dvw, 3.75rem);
+    }
     .outline {
       color: var(--color-base);
       text-shadow:

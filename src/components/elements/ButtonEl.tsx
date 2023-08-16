@@ -47,9 +47,11 @@ const ButtonEl = ({children, btnSetting}: Props) => {
       target={mergedSetting.targetBlank ? "_blank" : "_self"}
       rel={mergedSetting.targetBlank ? "noopener noreferrer" : ""}
     >
-      {Icon && mergedSetting.iconPosition === "left" && <Icon className={`${styles.icon}`}/>}
-      {children}
-      {Icon && mergedSetting.iconPosition === "right" && <Icon className={`${styles.icon}`}/>}
+      <span>
+        {Icon && mergedSetting.iconPosition === "left" && <Icon className={`${styles.icon}`}/>}
+        {children}
+        {Icon && mergedSetting.iconPosition === "right" && <Icon className={`${styles.icon}`}/>}
+      </span>
     </Link>
   );
 };

@@ -123,5 +123,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+    a {
+      display: block;
+      transition: transform .3s, opacity .3s;
+      transition-timing-function: ease-in-out;
+      &:hover {
+        transform: translateY(8px);
+        opacity: .9;
+      }
+    }
   }
 }

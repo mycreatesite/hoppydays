@@ -41,7 +41,37 @@
   letter-spacing: -.04em;
   line-height: 1;
   li + li {
-    margin-top: 16px;
+    margin-top: 12px;
+  }
+  li {
+    a {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      height: calc(20em / 18);
+      span {
+        display: inline-block;
+        transition: transform .4s cubic-bezier(0.87, 0, 0.13, 1);
+        &::before {
+          color: var(--color-base-dark);
+          content:attr(data-menu);
+          position: absolute;
+          left: 0;
+          top: 1.125rem;
+          transform: skewY(40deg);
+          transform-origin: left top;
+          transition: transform .4s cubic-bezier(0.87, 0, 0.13, 1);
+        }
+      }
+      &:hover {
+        span {
+          transform: translateY(calc(-100% - 2px));
+          &::before {
+            transform: skewY(0);
+          }
+        }
+      }
+    }
   }
 }
 

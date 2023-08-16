@@ -40,8 +40,8 @@ const Header = () => {
           )}
           <nav className={`${styles.nav}`}>
             <ul>
-              <li><Link href="/recommend" aria-label="Recommend">Recommend</Link></li>
-              <li><Link href="/nippo" aria-label="Nippo">Nippo</Link></li>
+              <li><Link href="/recommend" aria-label="Recommend"><span data-menu="Recommend">Recommend</span></Link></li>
+              <li><Link href="/nippo" aria-label="Nippo"><span data-menu="Nippo">Nippo</span></Link></li>
             </ul>
           </nav>
         </div>

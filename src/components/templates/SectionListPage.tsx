@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
 import FvBg from "@/components/modules/FvBg";
@@ -23,6 +24,10 @@ type Props = {
 };
 
 export default function SectionListPage({ items, path, heading }: Props) {
+
+  const router = useRouter();
+  const pagePath = router.pathname;
+
   return (
     <>
       <section className={`${styles.listPage} js-scrollAddClass`}>
@@ -34,6 +39,9 @@ export default function SectionListPage({ items, path, heading }: Props) {
               {splitTextWithSpan(heading.second, 200)}
             </span>
           </h1>
+          <p className={`${styles.ja}`}>
+            {pagePath === "/recommend" ? "おすすめホッピー居酒屋" : "ホッピー日報"}
+          </p>
           <ul className={`${styles.list}`}>
             {items.map((item, index) => {
               const isNippo = "date" in item;

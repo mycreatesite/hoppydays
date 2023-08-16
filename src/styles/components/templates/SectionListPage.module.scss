@@ -12,10 +12,7 @@
   line-height: 1;
   font-size: clamp(1.5rem,10dvw,4.5rem);
   letter-spacing: -.04em;
-  margin-bottom: 160px;
-  @include variables.mq(sp) {
-    margin-bottom: 120px;
-  }
+  margin-bottom: 1rem;
   .outline {
     color: #fff;
     text-shadow:
@@ -30,6 +27,17 @@
         0px 0.5px 0 var(--color-text),  0 -0.5px 0 var(--color-text),
         -0.5px 0 0 var(--color-text), 0.5px 0 0 var(--color-text);
     }
+  }
+}
+
+.ja {
+  color: var(--color-base-dark);
+  text-align: center;
+  letter-spacing: .12em;
+  margin-bottom: 120px;
+  @include variables.mq(sp) {
+    margin-bottom: 80px;
+    font-size: .875rem;
   }
 }
 

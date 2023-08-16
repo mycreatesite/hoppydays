@@ -8,6 +8,10 @@ import Container from "@/components/layouts/Container";
 import { splitTextWithSpan } from "../util/splitTextWithSpan";
 import { sawarabiGothic } from "@/components/util/font";
 import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc"
+import timezone from "dayjs/plugin/timezone"
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 type Props = {
   items: Recommend[] | Nippo[];
@@ -55,7 +59,7 @@ export default function SectionListPage({ items, path, heading }: Props) {
                     <div className={`${styles.content}`}>
                       {isNippo && (
                         <time dateTime={item.date} className={`${styles.date}`}>
-                          {dayjs(item.date).format("YYYY.MMDD")}
+                          {dayjs(item.date).tz('Asia/Tokyo').format("YYYY.MMDD")}
                         </time>
                       )}
                       <h3

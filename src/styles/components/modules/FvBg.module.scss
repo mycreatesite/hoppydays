@@ -40,11 +40,11 @@
       right: 10%;
       top: 0;
       @include variables.mq(sp) {
-        width: 14dvw;
+        width: 14svw;
         height: auto;
       }
-      @include variables.mq(pcxl) {
-        top: -5dvw;
+      @include variables.mq(pc) {
+        top: -5svw;
       }
     }
   }

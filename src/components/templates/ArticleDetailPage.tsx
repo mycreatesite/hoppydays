@@ -72,7 +72,7 @@ export default function ArticleDetailPage({
                 loading = 'eager'
               />
             </div>
-            <p className={`${styles.body}`} dangerouslySetInnerHTML={{ __html: item.body.replace(/\r?\n/g, '<br>') }} />
+            <p className={`${styles.body} ${sawarabiGothic.className}`} dangerouslySetInnerHTML={{ __html: item.body.replace(/\r?\n/g, '<br>') }} />
           </div>
           <div className={`${styles.link}`}>
             <ButtonEl

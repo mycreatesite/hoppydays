@@ -152,7 +152,7 @@
       transform-origin: left top;
     }
   }
-  [class*="is-ready"] & {
+  [class*="is-active"] & {
     .copy {
       .inner {
         transform: translateY(0) rotate(0);
@@ -161,12 +161,10 @@
   }
 }
 
-//animations
-
 .bottomCopyGroup {
   opacity: 0;
   transition: opacity 1s;
-  [class*="is-ready"] & {
+  [class*="is-active"] & {
     opacity: 1;
   }
   .more {

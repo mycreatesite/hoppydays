@@ -10,7 +10,7 @@ type Props = {
 
 const SectionMainvisual = ({ fvBgClass }: Props) => {
   return (
-    <section className={`${styles.mainvisual}`}>
+    <section className={`${styles.mainvisual} js-scrollAddClass`}>
       <FvBg fvBgClass="" />
       <div className={`${styles.content}`}>
         <div className={`${styles.copyGroup} js-scrollParallax-mainLogo`}>

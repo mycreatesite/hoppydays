@@ -7,7 +7,6 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { scrollAddClass } from "@/components/util/scrollTriggerFunctions";
 import { scrollParallax } from "../components/util/scrollTriggerFunctions";
-import { topPageBodyReady } from "@/components/util/topPageBodyReady";
 import Layout from "@/components/layouts/Layout";
 import "@acab/reset.css";
 import "@/styles/globals.scss";
@@ -19,7 +18,6 @@ export default function App({ Component, pageProps }: AppProps) {
   
   useEffect(() => {
 
-    topPageBodyReady(router.pathname === "/");
     scrollAddClass();
     scrollParallax(".js-scrollParallax-bubble", "y", 125, -125);
     scrollParallax(".js-scrollParallax-post", "x", -50, 50);

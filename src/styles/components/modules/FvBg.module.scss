@@ -77,17 +77,17 @@
         transition-delay: 2.5s;
       }
     }
-    // トップページの背景設定（アクティブ時）
-    [class*="is-ready"] & {
-      .inner {
-        .front, .back {
-          transform: scaleY(1);
-        }
-        .bubble {
-          transform: translateY(0);
-          opacity: 1;
-          animation: infinite float01 2s both alternate ease-in-out;
-        }
+  }
+  // トップページの背景設定（アクティブ時）
+  [class*="is-active"][class*="mainvisual"] &  {
+    .inner {
+      .front, .back {
+        transform: scaleY(1);
+      }
+      .bubble {
+        transform: translateY(0);
+        opacity: 1;
+        animation: infinite float01 2s both alternate ease-in-out;
       }
     }
   }

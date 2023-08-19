@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ReactNode } from 'react';
 import { useRouter } from "next/router";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
@@ -21,9 +22,10 @@ type Props = {
     first: string;
     second: string;
   };
+  children?: ReactNode;
 };
 
-export default function SectionListPage({ items, path, heading }: Props) {
+export default function SectionListPage({ items, path, heading, children }: Props) {
 
   const router = useRouter();
   const pagePath = router.pathname;
@@ -33,15 +35,18 @@ export default function SectionListPage({ items, path, heading }: Props) {
       <section className={`${styles.listPage} js-scrollAddClass`}>
         <FvBg fvBgClass="underPage" />
         <Container containerClass="largeContainer">
-          <h1 className={`${styles.heading}`}>
-            {splitTextWithSpan(heading.first, 200)}
-            <span className={`${styles.outline}`}>
-              {splitTextWithSpan(heading.second, 200)}
-            </span>
-          </h1>
-          <p className={`${styles.ja}`}>
-            {pagePath === "/recommend" ? "おすすめホッピー居酒屋" : "ホッピー日報"}
-          </p>
+          <div className={`${styles.headerContent}`}>
+            <h1 className={`${styles.heading}`}>
+              {splitTextWithSpan(heading.first, 200)}
+              <span className={`${styles.outline}`}>
+                {splitTextWithSpan(heading.second, 200)}
+              </span>
+            </h1>
+            <p className={`${styles.headingJa}`}>
+              {pagePath === "/nippo" ? "ホッピー日報" : "おすすめホッピー居酒屋" }
+            </p>
+            { children }
+          </div>
           <ul className={`${styles.list}`}>
             {items.map((item, index) => {
               const isNippo = "date" in item;

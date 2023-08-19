@@ -135,9 +135,20 @@
       display: block;
       transition: transform .3s, opacity .3s;
       transition-timing-function: ease-in-out;
+      .content {
+        &::after {
+          transform-origin: left;
+          transition: transform 0.5s ease-in-out;
+        }
+      }
       &:hover {
         transform: translateY(8px);
         opacity: .9;
+        .content {
+          &::after {
+            transform: scaleX(2);
+          }
+        }
       }
     }
   }

@@ -21,7 +21,7 @@ const Footer = () => {
             <Link href={`https://myscreate.com/`} target="_blank" rel="noopener noreferrer">
               <Image
                 src="/common/logo-myc.svg"
-                alt=""
+                alt="ma-ya&#39;s CREATE"
                 height={40}
                 width={80}
               />
@@ -29,7 +29,7 @@ const Footer = () => {
             <Link href={`https://wicd-02-next.vercel.app/`} target="_blank" rel="noopener noreferrer">
               <Image
                 src="/common/logo-wicd.svg"
-                alt=""
+                alt="WHAT I CAN DO."
                 height={20}
                 width={80}
               />

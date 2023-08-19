@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import Link from "next/link";
-import styles from "@/styles/components/elements/ButtonEl.module.scss";
+import styles from "@/styles/components/elements/Button.module.scss";
 import { HiOutlineArrowRight } from "react-icons/hi"
 import { HiOutlineArrowLeft } from "react-icons/hi"
 
@@ -25,7 +25,7 @@ type Props = {
  * ボタンコンポーネント
  * @param btnSetting ボタンの設定 (url / size / iconPosition / targetBlank)
  */
-const ButtonEl = ({children, btnSetting}: Props) => {
+const Button = ({children, btnSetting}: Props) => {
   const defaultBtnSetting = {
     url: "/",
     size: "size-default",
@@ -55,4 +55,4 @@ const ButtonEl = ({children, btnSetting}: Props) => {
     </Link>
   );
 };
-export default ButtonEl;
+export default Button;

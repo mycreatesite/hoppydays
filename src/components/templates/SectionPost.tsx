@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ReactNode } from "react";
 import styles from "@/styles/components/templates/SectionPost.module.scss";
 import Container from "../layouts/Container";
-import ButtonEl from "../elements/ButtonEl";
+import Button from "../elements/Button";
 import { splitTextWithSpan } from "../util/splitTextWithSpan";
 
 type Props = {
@@ -37,14 +37,14 @@ const SectionPost = ({ children, setting }: Props) => {
         </div>
         <Container containerClass="commonContainer">
           <div className={`${styles.link}`}>
-            <ButtonEl
+            <Button
               btnSetting={{
                 url: `/${setting.linkURL}/`,
                 icon: "arrow-right"
               }}
             >
               一覧ページへ
-            </ButtonEl>
+            </Button>
           </div>
         </Container>
         <div className={`${styles.bubbleOuter} js-scrollParallax-bubble`}>

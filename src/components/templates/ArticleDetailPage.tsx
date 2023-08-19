@@ -4,7 +4,7 @@ import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
 import FvBg from "@/components/modules/FvBg";
 import styles from "@/styles/components/templates/ArticleDetailPage.module.scss";
-import ButtonEl from "@/components/elements/ButtonEl";
+import Button from "@/components/elements/Button";
 import Container from "@/components/layouts/Container";
 import { sawarabiGothic } from "@/components/util/font";
 import { splitTextWithSpan } from "../util/splitTextWithSpan";
@@ -53,13 +53,13 @@ export default function ArticleDetailPage({
               </p>
               {!isNippo && (
                 <div className={`${styles.info}`}>
-                  <ButtonEl
+                  <Button
                     btnSetting={{
                       url: item.link,
                       size: "size-small",
                       targetBlank: true
                     }}
-                  >店舗情報</ButtonEl>
+                  >店舗情報</Button>
                 </div>
               )}
             </div>
@@ -75,7 +75,7 @@ export default function ArticleDetailPage({
             <p className={`${styles.body} ${sawarabiGothic.className}`} dangerouslySetInnerHTML={{ __html: item.body.replace(/\r?\n/g, '<br>') }} />
           </div>
           <div className={`${styles.link}`}>
-            <ButtonEl
+            <Button
               btnSetting={{
                 url: `./`,
                 icon: "arrow-left",
@@ -83,7 +83,7 @@ export default function ArticleDetailPage({
               }}
             >
               一覧ページへ
-            </ButtonEl>
+            </Button>
           </div>
         </Container>
       </article>

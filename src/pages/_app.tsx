@@ -19,12 +19,12 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
 
     scrollAddClass();
-    scrollParallax(".js-scrollParallax-bubble", "y", 125, -125);
+    scrollParallax(".js-scrollParallax-bubble", "y", 150, -150);
     scrollParallax(".js-scrollParallax-post", "x", -50, 50);
 
     let matchMedia = gsap.matchMedia();
     matchMedia.add("(min-width: 769px)", () => {
-      scrollParallax(".js-scrollParallax-mainLogo", "y", 0, 150, "20%", "0%");
+      scrollParallax(".js-scrollParallax-mainLogo", "y", 0, 100, "20%", "0%");
       scrollParallax(".js-scrollParallax-slideContainer", "x", 200, 50);
     });
     

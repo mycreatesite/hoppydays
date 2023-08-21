@@ -24,6 +24,7 @@ const Slider = ({ items, path }: Props) => {
       slidesPerView="auto"
       spaceBetween={24}
       grabCursor={true}
+      mousewheel= {true}
       breakpoints={{
         768: {
           spaceBetween: 32,

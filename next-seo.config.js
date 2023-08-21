@@ -30,6 +30,10 @@ const SEO = {
       href: 'https://hoppydays.vercel.app/apple-touch-icon.png',
       sizes: '256x256'
     },
-  ]
+    {
+      rel: 'manifest',
+      href: '/manifest.json'
+    },
+  ],
 }
 export default SEO;

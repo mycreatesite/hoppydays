@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
@@ -21,10 +22,14 @@ const Slider = ({ items, path }: Props) => {
   return (
     <Swiper
       className={`${styles.swiper}`}
+      modules={[Mousewheel]}
       slidesPerView="auto"
-      spaceBetween={24}
       grabCursor={true}
-      mousewheel= {true}
+      mousewheel={{
+        thresholdDelta: 50,
+        forceToAxis: true,
+      }}
+      spaceBetween={24}
       breakpoints={{
         768: {
           spaceBetween: 32,

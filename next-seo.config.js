@@ -24,7 +24,12 @@ const SEO = {
     {
       rel: 'icon',
       href: '/favicon.ico',
-    }
+    },
+    {
+      rel: 'apple-touch-icon',
+      href: 'https://hoppydays.vercel.app/apple-touch-icon.png',
+      sizes: '256x256'
+    },
   ]
 }
 export default SEO;

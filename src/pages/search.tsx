@@ -1,11 +1,14 @@
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 import SectionListPage from "@/components/templates/SectionListPage";
 
 export default function Home() {
+
   const [keyword, setKeyword] = useState("");
   const [recommends, setRecommends] = useState([]);
-
+  const router = useRouter();
   const searchRecommends = async () => {
     // 検索APIにリクエストを送信
     const res = await axios.get("./api/recommends", {
@@ -17,7 +20,16 @@ export default function Home() {
     setRecommends(res.data.contents);
   };
 
+  useEffect(() => {
+
+    setKeyword(router.query.keyword as string)
+    searchRecommends();
+  }, [router.pathname,router.query]);
+
   return (
+
+
+
     <>
       <SectionListPage
         items={recommends}

@@ -2,11 +2,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-export const scrollAddClass = () => {
-  document.querySelectorAll(".js-scrollAddClass").forEach((el) => {
+export const scrollAddClass = (
+  className: string = ".js-scrollAddClass",
+  start: string = "50%"
+) => {
+  document.querySelectorAll(className).forEach((el) => {
     ScrollTrigger.create({
       trigger: el,
-      start: "top 65%",
+      start: `top ${start}`,
       toggleClass: { targets: el, className: "is-active" },
       once: true,
       // markers: true

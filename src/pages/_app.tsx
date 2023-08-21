@@ -19,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
 
     scrollAddClass();
+    scrollAddClass(".js-scrollAddClassFooter", "70%");
     scrollParallax(".js-scrollParallax-bubble", "y", 150, -150);
     scrollParallax(".js-scrollParallax-post", "x", -50, 50);
 

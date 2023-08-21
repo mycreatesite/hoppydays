@@ -5,7 +5,7 @@ import styles from "@/styles/components/layouts/Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer className={`${styles.footer} js-scrollAddClass`}>
+    <footer className={`${styles.footer} js-scrollAddClassFooter`}>
       <div className={`${styles.bgLogo}`}>
         <Image
           src="/common/logo-yellow.svg"

@@ -27,9 +27,6 @@ export default function Search() {
   }, [router.pathname,router.query]);
 
   return (
-
-
-
     <>
       <SectionListPage
         items={recommends}

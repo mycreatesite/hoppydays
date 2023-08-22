@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import SectionListPage from "@/components/templates/SectionListPage";
 
-export default function Home() {
+export default function Search() {
 
   const [keyword, setKeyword] = useState("");
   const [recommends, setRecommends] = useState([]);

@@ -45,11 +45,11 @@ export default function Home({ recommends, nippos }: Props) {
 export const getStaticProps = async () => {
   const recommendData = await client.get({
     endpoint: "recommend",
-    queries: { limit: 3, orders: "-publishedAt" },
+    queries: { limit: 3 },
   });
   const nippoData = await client.get({
     endpoint: "nippo",
-    queries: { limit: 3, orders: "-publishedAt" },
+    queries: { limit: 3 },
   });
   return {
     props: {

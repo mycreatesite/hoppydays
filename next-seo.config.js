@@ -35,5 +35,11 @@ const SEO = {
       href: '/manifest.json'
     },
   ],
+  additionalMetaTags: [
+    {
+      name: 'theme-color',
+      content: '#222222'
+    },
+  ],
 }
 export default SEO;

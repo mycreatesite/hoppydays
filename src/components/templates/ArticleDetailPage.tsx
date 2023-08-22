@@ -65,7 +65,7 @@ export default function ArticleDetailPage({
             </div>
             <div className={`${styles.image}`}>
               <Image
-                src={item.image.url}
+                src={`${item.image.url}?w=1200&q=70&fm=webp`}
                 alt={item.name}
                 height={528}
                 width={800}

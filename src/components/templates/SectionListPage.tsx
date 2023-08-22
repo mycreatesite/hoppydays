@@ -57,7 +57,7 @@ export default function SectionListPage({ items, path, heading }: Props) {
                   <Link href={`/${path}/${item.id}`}>
                     <div className={`${styles.image}`}>
                       <Image
-                        src={item.image.url}
+                        src={`${item.image.url}?w=800&q=70&fm=webp`}
                         alt={item.name}
                         height={338}
                         width={507}

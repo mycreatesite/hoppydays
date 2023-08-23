@@ -67,6 +67,7 @@ export default function SectionListPage({ items, path, heading, children }: Prop
                         height={338}
                         width={507}
                         loading="eager"
+                        priority={true}
                       />
                     </div>
                     <div className={`${styles.content}`}>

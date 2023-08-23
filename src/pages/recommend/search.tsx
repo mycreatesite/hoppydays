@@ -14,7 +14,7 @@ export default function Search() {
   }
   const [keyword, setKeyword] = useState(query || "");
   const [recommends, setRecommends] = useState([]);
-
+  
   useEffect(() => {
     setKeyword(router.query.keyword as string)
     console.log('setKeyword')
@@ -23,6 +23,7 @@ export default function Search() {
   useEffect(() => {
     searchRecommends()
     console.log('searchRecommends')
+    console.log(keyword)
     // eslint-disable-next-line
   }, [keyword]);
 

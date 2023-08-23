@@ -17,10 +17,12 @@ export default function Search() {
 
   useEffect(() => {
     setKeyword(router.query.keyword as string)
+    console.log('setKeyword')
   }, [router]);
 
   useEffect(() => {
     searchRecommends()
+    console.log('searchRecommends')
     // eslint-disable-next-line
   }, [keyword]);
 
@@ -31,6 +33,7 @@ export default function Search() {
       },
     });
     setRecommends(res.data.contents);
+    console.log('setRecommends')
   }
 
   return (

@@ -18,12 +18,12 @@ export default function Search() {
   useEffect(() => {
     setKeyword(router.query.keyword as string)
     console.log('setKeyword')
-  }, [router]);
+  }, [router.query.keyword]);
 
   useEffect(() => {
-    searchRecommends()
-    console.log('searchRecommends')
+    keyword && searchRecommends();
     console.log(keyword)
+    console.log('searchRecommends')
     // eslint-disable-next-line
   }, [keyword]);
 

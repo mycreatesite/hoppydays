@@ -45,8 +45,8 @@ export default function SectionListPage({ items, path, heading, children }: Prop
             <p className={`${styles.headingJa}`}>
               {pagePath === "/nippo" ? "ホッピー日報" : "おすすめホッピー居酒屋" }
             </p>
-            { children }
           </div>
+          { children }
           <ul className={`${styles.list}`}>
             {items.map((item, index) => {
               const isNippo = "date" in item;

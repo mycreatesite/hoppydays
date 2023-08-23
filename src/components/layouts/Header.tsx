@@ -42,8 +42,6 @@ const Header = () => {
             <ul>
               <li><Link href="/recommend" aria-label="Recommend"><span data-menu="Recommend">Recommend</span></Link></li>
               <li><Link href="/nippo" aria-label="Nippo"><span data-menu="Nippo">Nippo</span></Link></li>
-              <li><Link href="/search?keyword=池袋" aria-label="Search"><span data-menu="Search">Search</span></Link></li>
-              <li><Link href="/search?keyword=田町" aria-label="Search"><span data-menu="Search">Search</span></Link></li>
             </ul>
           </nav>
         </div>

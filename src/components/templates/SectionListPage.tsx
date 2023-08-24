@@ -18,7 +18,7 @@ dayjs.extend(timezone);
 
 type Props = {
   items: Recommend[] | Nippo[];
-  loading: boolean;
+  loading?: boolean;
   path: string;
   heading: {
     first: string;

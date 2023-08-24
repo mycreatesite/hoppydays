@@ -14,6 +14,7 @@ export default function Search() {
   }
   const [keyword, setKeyword] = useState(query || "");
   const [recommends, setRecommends] = useState([]);
+  const [loading, setLoading] = useState(false);
   
   useEffect(() => {
     setKeyword(router.query.keyword as string)
@@ -25,18 +26,21 @@ export default function Search() {
   }, [keyword]);
 
   async function searchRecommends() {
+    setLoading(true);
     const res = await axios.get("../api/recommends", {
       params: {
         keyword,
       },
     });
     setRecommends(res.data.contents);
+    setLoading(false);
   }
 
   return (
     <>
       <SectionListPage
         items={recommends}
+        loading={loading}
         path="recommend"
         heading={{ first: "Recom", second: "mend" }}
       >

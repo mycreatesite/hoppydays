@@ -32,9 +32,13 @@
   top: 50%;
   transform: translateY(-50%);
   border-radius: 100%;
-  padding: 11px;
+  padding: 10.5px;
+  border: 1px solid currentColor;
   background-color: var(--color-text);
   color: #fff;
-  border: none;
   font-size: 20px;
+  transition: opacity .4s;
+  &:hover {
+    opacity: .7;
+  }
 }

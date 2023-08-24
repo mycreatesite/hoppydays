@@ -49,9 +49,7 @@ export default function SectionListPage({ items, loading, path, heading, childre
             </p>
           </div>
           { children }
-          { loading &&
-            <Loading/>
-          }
+          { loading && <Loading/> }
           { !loading &&
             <>
               <ul className={`${styles.list}`}>

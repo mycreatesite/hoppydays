@@ -92,6 +92,7 @@ export default function SectionListPage({ items, path, heading, children }: Prop
               );
             })}
           </ul>
+          {!items.length && <p className={`${styles.noResult}`}>該当の居酒屋がないです。<br/>勉強不足ですんません。</p>}
         </Container>
       </section>
     </>

@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import Header from '@/components/layouts/Header'
 import Footer from '@/components/layouts/Footer'
+import Awards from '../modules/Awards';
 
 type Props = {
   children?: ReactNode;
@@ -14,6 +15,7 @@ const Layout = ({children}: Props) => {
         {children}
       </main>
       <Footer/>
+      <Awards />
     </>
   )
 }  

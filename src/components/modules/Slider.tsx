@@ -24,9 +24,10 @@ const Slider = ({ items, path }: Props) => {
       className={`${styles.swiper}`}
       modules={[Mousewheel]}
       slidesPerView="auto"
+      centeredSlides={true}
       grabCursor={true}
       mousewheel={{
-        thresholdDelta: 50,
+        thresholdDelta: 70,
         forceToAxis: true,
       }}
       spaceBetween={24}

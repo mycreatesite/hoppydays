@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
     let matchMedia = gsap.matchMedia();
     matchMedia.add("(min-width: 769px)", () => {
       scrollParallax(".js-scrollParallax-mainLogo", "y", 0, 100, "20%", "0%");
-      scrollParallax(".js-scrollParallax-slideContainer", "x", 200, 50);
+      scrollParallax(".js-scrollParallax-slideContainer", "x", 100, -100);
     });
     
   }, [router.pathname]);

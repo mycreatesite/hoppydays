@@ -40,6 +40,10 @@ const SEO = {
       name: 'theme-color',
       content: '#222222'
     },
+    {
+      name: 'google-site-verification',
+      content: 'n-45gxzttq9F36Z8YxhMX4MaZiADSVn9wzTP6LE4Iws'
+    },
   ],
 }
 export default SEO;

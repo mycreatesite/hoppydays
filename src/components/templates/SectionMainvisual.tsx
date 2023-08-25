@@ -22,6 +22,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 height={120}
                 width={5480}
                 loading="eager"
+                priority={true}
               />
               <Image
                 src="/img-mv-copy.svg"
@@ -29,6 +30,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 height={120}
                 width={5480}
                 loading="eager"
+                priority={true}
               />
             </div>
           </div>
@@ -40,6 +42,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 height={120}
                 width={5480}
                 loading="eager"
+                priority={true}
               />
               <Image
                 src="/img-mv-copy.svg"
@@ -47,6 +50,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 height={120}
                 width={5480}
                 loading="eager"
+                priority={true}
               />
             </div>
           </div>
@@ -58,6 +62,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 height={120}
                 width={5480}
                 loading="eager"
+                priority={true}
               />
               <Image
                 src="/img-mv-copy.svg"
@@ -65,6 +70,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 height={120}
                 width={5480}
                 loading="eager"
+                priority={true}
               />
             </div>
           </div>
@@ -78,6 +84,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
           height={215}
           width={174}
           loading="eager"
+          priority={true}
         />
       </div>
       <div className={`${styles.bottomCopy}`}>

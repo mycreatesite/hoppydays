@@ -16,6 +16,7 @@ const FvBg = ({ fvBgClass }: Props) => {
           height={740}
           width={1920}
           loading="eager"
+          priority={true}
         />
         <Image
           className={`${styles.front}`}
@@ -24,6 +25,7 @@ const FvBg = ({ fvBgClass }: Props) => {
           height={740}
           width={1920}
           loading="eager"
+          priority={true}
         />
         <Image
           className={`${styles.bubble}`}
@@ -32,6 +34,7 @@ const FvBg = ({ fvBgClass }: Props) => {
           height={116}
           width={77}
           loading="eager"
+          priority={true}
         />
       </div>
     </div>

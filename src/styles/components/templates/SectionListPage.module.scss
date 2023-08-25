@@ -7,38 +7,42 @@
   min-height: 100svh;
 }
 
-.heading {
-  text-align: center;
-  font-weight: 400;
-  line-height: 1;
-  font-size: clamp(1.5rem,10dvw,4.5rem);
-  letter-spacing: -.04em;
-  margin-bottom: 1rem;
-  .outline {
-    color: #fff;
-    text-shadow:
-      1px 1px 0 var(--color-text), -1px -1px 0 var(--color-text),
-      -1px 1px 0 var(--color-text), 1px -1px 0 var(--color-text),
-      0px 1px 0 var(--color-text),  0 -1px 0 var(--color-text),
-      -1px 0 0 var(--color-text), 1px 0 0 var(--color-text);
-    @include variables.mq(sp) {
+.headerContent {
+  padding-bottom: 60px;
+  @include variables.mq(sp) {
+    padding-bottom: 40px;
+  }
+  .heading {
+    text-align: center;
+    font-weight: 400;
+    line-height: 1;
+    font-size: clamp(1.5rem,10dvw,4.5rem);
+    letter-spacing: -.04em;
+    margin-bottom: 1rem;
+    .outline {
+      color: #fff;
       text-shadow:
-        0.5px 0.5px 0 var(--color-text), -0.5px -0.5px 0 var(--color-text),
-        -0.5px 0.5px 0 var(--color-text), 0.5px -0.5px 0 var(--color-text),
-        0px 0.5px 0 var(--color-text),  0 -0.5px 0 var(--color-text),
-        -0.5px 0 0 var(--color-text), 0.5px 0 0 var(--color-text);
+        1px 1px 0 var(--color-text), -1px -1px 0 var(--color-text),
+        -1px 1px 0 var(--color-text), 1px -1px 0 var(--color-text),
+        0px 1px 0 var(--color-text),  0 -1px 0 var(--color-text),
+        -1px 0 0 var(--color-text), 1px 0 0 var(--color-text);
+      @include variables.mq(sp) {
+        text-shadow:
+          0.5px 0.5px 0 var(--color-text), -0.5px -0.5px 0 var(--color-text),
+          -0.5px 0.5px 0 var(--color-text), 0.5px -0.5px 0 var(--color-text),
+          0px 0.5px 0 var(--color-text),  0 -0.5px 0 var(--color-text),
+          -0.5px 0 0 var(--color-text), 0.5px 0 0 var(--color-text);
+      }
     }
   }
-}
-
-.ja {
-  color: var(--color-base-dark);
-  text-align: center;
-  letter-spacing: .12em;
-  margin-bottom: 120px;
-  @include variables.mq(sp) {
-    margin-bottom: 80px;
-    font-size: .875rem;
+  
+  .headingJa {
+    color: var(--color-base-dark);
+    text-align: center;
+    letter-spacing: .12em;
+    @include variables.mq(sp) {
+      font-size: .875rem;
+    }
   }
 }
 
@@ -46,7 +50,9 @@
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 64px;
+  padding-top: 40px;
   @include variables.mq(tab) {
+    padding-top: 60px;
     grid-template-columns: 1fr 1fr;
     column-gap: calc(40 / 1920 * 100dvw);
     row-gap: calc(120 / 1920 * 100dvw);
@@ -106,6 +112,10 @@
       }
     }
   }
+}
+
+.noResult {
+  text-align: center;
 }
 
 //animations

@@ -70,6 +70,7 @@ export default function ArticleDetailPage({
                 height={528}
                 width={800}
                 loading = 'eager'
+                priority={true}
               />
             </div>
             <p className={`${styles.body} ${sawarabiGothic.className}`} dangerouslySetInnerHTML={{ __html: item.body.replace(/\r?\n/g, '<br>') }} />

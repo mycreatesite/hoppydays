@@ -22,6 +22,7 @@ const Header = () => {
                   height={30}
                   width={212}
                   loading="eager"
+                  priority={true}
                 />
               </Link>
             </h1>
@@ -34,6 +35,7 @@ const Header = () => {
                   height={30}
                   width={212}
                   loading="eager"
+                  priority={true}
                 />
               </Link>
             </div>

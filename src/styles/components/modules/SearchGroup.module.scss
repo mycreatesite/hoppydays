@@ -1,0 +1,44 @@
+@use "../../variables";
+
+.inputRow {
+  display: grid;
+  place-items: center;
+}
+
+.inputGroup {
+  position: relative;
+  width: 320px;
+  @include variables.mq(sp) {
+    width: 100%;
+  }
+}
+
+.searchInput {
+  background-color: #fff;
+  border-radius: 100px;
+  border: 1px solid currentColor;
+  padding: .5em 50px .5em 1em;
+  display: block;
+  width: 100%;
+  &:-webkit-autofill {
+    color-scheme: none;
+    transition: background-color 10000s ease-in-out 0s;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 100%;
+  padding: 10.5px;
+  border: 1px solid currentColor;
+  background-color: var(--color-text);
+  color: #fff;
+  font-size: 20px;
+  transition: opacity .4s;
+  &:hover {
+    opacity: .7;
+  }
+}

@@ -6,6 +6,7 @@ export default function Awards() {
       <div id={`${styles.awards}`}>
         <a href="https://www.awwwards.com/sites/hoppy-days" target="_blank">
           <svg width="53.08" height="171.358">
+            <title>Awwwards.com</title>
             <path
               className="js-color-bg"
               fill="#222222"

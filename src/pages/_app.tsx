@@ -11,6 +11,8 @@ import Layout from "@/components/layouts/Layout";
 import "@acab/reset.css";
 import "@/styles/globals.scss";
 import { FontGlobal } from "@/components/util/FontGlobal";
+import GoogleTagManager, { GtmId } from '@/components/util/GoogleTagManager'
+import { gtmId } from '@/libs/gtm'
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -35,6 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <FontGlobal />
       <Head>
+        <GoogleTagManager gtmId={gtmId as GtmId} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <DefaultSeo {...SEO} />

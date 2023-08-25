@@ -75,15 +75,30 @@
   .slide {
     opacity: 0;
     transform: translateX(64px);
-    transition: transform 1s, opacity 1s;
+    transition-property: transform, opacity, filter;
+    transition-duration: 1s;
     @include variables.mq(sp) {
       transform: translateX(32px);
+    }
+    .image {
+      transition: box-shadow 1s;
     }
   }
   [class*="is-active"] & {
     .slide {
       transform: translateX(0);
-      opacity: 1;
+      opacity: .8;
+      filter: grayscale(1);
+      .image {
+        box-shadow: none;
+      }
+      &[class*="swiper-slide-active"] {
+        filter: grayscale(0);
+        opacity: 1;
+        .image {
+          box-shadow: 0px 10px 50px -20px rgba(148, 125, 0, .8);
+        }
+      }
     }
   }
 }

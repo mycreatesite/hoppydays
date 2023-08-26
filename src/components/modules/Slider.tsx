@@ -33,9 +33,11 @@ const Slider = ({ items, path }: Props) => {
       breakpoints={{
         768: {
           spaceBetween: 32,
+          centeredSlides: true,
         },
         1600: {
           spaceBetween: 64,
+          centeredSlides: true,
         },
       }}
     >

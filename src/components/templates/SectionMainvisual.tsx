@@ -2,7 +2,6 @@ import Image from "next/image";
 import FvBg from "../modules/FvBg";
 import styles from "@/styles/components/templates/SectionMainvisual.module.scss";
 import Container from "../layouts/Container";
-import { useEffect } from 'react';
 
 type Props = {
   fvBgClass?: string;

@@ -69,11 +69,11 @@ export default function SectionListPage({ items, loading, path, heading, heading
                               {dayjs(item.date).tz('Asia/Tokyo').format("YYYY.MMDD")}
                             </time>
                           )}
-                          <h3
+                          <h2
                             className={`${styles.title} ${sawarabiGothic.className}`}
                           >
                             {isNippo ? item.title : item.name}
-                          </h3>
+                          </h2>
                           <p
                             className={`${styles.subtitle} ${sawarabiGothic.className}`}
                           >

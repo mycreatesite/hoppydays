@@ -6,6 +6,7 @@ import FvBg from "@/components/modules/FvBg";
 import styles from "@/styles/components/templates/ArticleDetailPage.module.scss";
 import Button from "@/components/elements/Button";
 import Container from "@/components/layouts/Container";
+import HeadingContent from "@/components/modules/HeadingContent"
 import { sawarabiGothic } from "@/components/util/font";
 import { splitTextWithSpan } from "../util/splitTextWithSpan";
 import dayjs from "dayjs";
@@ -20,12 +21,14 @@ type Props = {
     first: string;
     second: string;
   };
+  headingJa: string;
   articleClass: string;
 };
 
 export default function ArticleDetailPage({
   item,
   heading,
+  headingJa,
   articleClass,
 }: Props) {
   const isNippo = "date" in item;
@@ -34,10 +37,10 @@ export default function ArticleDetailPage({
       <article className={`${styles.detailPage} ${articleClass} js-scrollAddClass`}>
         <FvBg fvBgClass="underPage" />
         <Container containerClass="smallContainer">
-          <p className={`${styles.heading}`}>
-            {splitTextWithSpan(heading.first, 200)}
-            <span className={`${styles.outline}`}>{splitTextWithSpan(heading.second, 200)}</span>
-          </p>
+          <HeadingContent
+            heading={{ first: heading.first, second: heading.second }}
+            headingJa={headingJa}
+          />
           <div className={`${styles.content}`}>
             <div className={`${styles.group}`}>
               {isNippo && (

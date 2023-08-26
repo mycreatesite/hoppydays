@@ -4,6 +4,7 @@
   --color-base: #FFE349;
   --color-base-dark: #756200;
   --color-text: #222222;
+  --color-text-gray: #919191;
   --z-index-header: 50;
   --margin-small: calc(80 / 1920 * 100%);
   --margin-large: calc(160 / 1920 * 100%);
@@ -40,6 +41,10 @@ ul, li {
 img {
   max-width: 100%;
   height: auto;
+}
+
+main {
+  min-height: 100svh;
 }
 
 .commonContainer {

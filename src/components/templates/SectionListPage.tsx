@@ -1,13 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ReactNode } from 'react';
-import { useRouter } from "next/router";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
 import FvBg from "@/components/modules/FvBg";
 import styles from "@/styles/components/templates/SectionListPage.module.scss";
 import Container from "@/components/layouts/Container";
-import { splitTextWithSpan } from "../util/splitTextWithSpan";
+import HeadingContent from "@/components/modules/HeadingContent"
 import { sawarabiGothic } from "@/components/util/font";
 import Loading from "../modules/Loading";
 import dayjs from "dayjs";
@@ -24,30 +23,20 @@ type Props = {
     first: string;
     second: string;
   };
+  headingJa: string;
   children?: ReactNode;
 };
 
-export default function SectionListPage({ items, loading, path, heading, children }: Props) {
-
-  const router = useRouter();
-  const pagePath = router.pathname;
-
+export default function SectionListPage({ items, loading, path, heading, headingJa, children }: Props) {
   return (
     <>
       <section className={`${styles.listPage} js-scrollAddClass`}>
         <FvBg fvBgClass="underPage" />
         <Container containerClass="largeContainer">
-          <div className={`${styles.headerContent}`}>
-            <h1 className={`${styles.heading}`}>
-              {splitTextWithSpan(heading.first, 200)}
-              <span className={`${styles.outline}`}>
-                {splitTextWithSpan(heading.second, 200)}
-              </span>
-            </h1>
-            <p className={`${styles.headingJa}`}>
-              {pagePath === "/nippo" ? "ホッピー日報" : "おすすめホッピー居酒屋" }
-            </p>
-          </div>
+          <HeadingContent
+            heading={{ first: heading.first, second: heading.second }}
+            headingJa={headingJa}
+          />
           { children }
           { loading && <Loading/> }
           { !loading &&

@@ -18,6 +18,13 @@
   }
 }
 
+.top {
+  margin: 24px 0 240px;
+  @include variables.mq(sp) {
+    margin: 8px 0 160px;
+  }
+}
+
 .bottom {
   display: grid;
   justify-content: end;
@@ -30,10 +37,8 @@
 .message {
   color: var(--color-base-dark);
   font-size: 1.125rem;
-  margin: 24px 0 240px;
   @include variables.mq(sp) {
     font-size: 1rem;
-    margin: 8px 0 160px;
   }
 }
 
@@ -55,8 +60,24 @@
   }
 }
 
+.about {
+  text-align: right;
+  a {
+    color: var(--color-text-gray);
+    font-size: .875rem;
+    text-decoration: underline;
+    transition: opacity .4s;
+    &:hover {
+      opacity: .7;
+    }
+    @include variables.mq(sp) {
+      font-size: .75rem;
+    }
+  }
+}
+
 .copyright {
-  color: #fff;
+  color: var(--color-text-gray);
   font-size: .75rem;
   letter-spacing: .04em;
   @include variables.mq(sp) {

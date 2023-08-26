@@ -8,19 +8,23 @@ type Props = {
 };
 
 export default function NippoList({ nippos }: Props) {
+
+  const PAGE_TITLE = "ホッピー日報";
+
   return (
     <>
       <NextSeo
-        title={`日報│${process.env.NEXT_PUBLIC_SITE_NAME}`}
+        title={`${PAGE_TITLE}│${process.env.NEXT_PUBLIC_SITE_NAME}`}
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/nippo`,
-          title: `日報│${process.env.NEXT_PUBLIC_SITE_NAME}`,
+          title: `${PAGE_TITLE}│${process.env.NEXT_PUBLIC_SITE_NAME}`,
         }}
       />
       <SectionListPage
         items={nippos}
         path="nippo"
         heading={{ first: "Nip", second: "po" }}
+        headingJa={PAGE_TITLE}
       />
     </>
   );

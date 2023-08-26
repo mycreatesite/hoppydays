@@ -1,0 +1,16 @@
+@use "../../variables";
+
+.generalPage {
+  padding-top: 150px;
+  padding-bottom: 160px;
+}
+
+//animations
+
+.bodyContent {
+  opacity: 0;
+  transition: opacity 1.5s;
+  [class*="is-active"] & {
+    opacity: 1;
+  }
+}

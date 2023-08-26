@@ -15,7 +15,9 @@ const Footer = () => {
         />
       </div>
       <Container containerClass="commonContainer">
-        <p className={`${styles.message}`}>For All of Hoppy Lovers.</p>
+        <div className={`${styles.top}`}>
+          <p className={`${styles.message}`}>For All of Hoppy Lovers.</p>
+        </div>
         <div className={`${styles.bottom}`}>
           <div className={`${styles.logoGroup}`}>
             <Link href={`https://myscreate.com/`} target="_blank" rel="noopener noreferrer">
@@ -35,6 +37,7 @@ const Footer = () => {
               />
             </Link>
           </div>
+          <p className={`${styles.about}`}><Link href="/about">About this website</Link></p>
           <p className={`${styles.copyright}`}>© Copyright 2023 │ ma-ya&apos;s CREATE All rights reserved.</p>
         </div>
       </Container>

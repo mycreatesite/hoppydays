@@ -29,6 +29,7 @@ export default function RecommendId({recommend}:Props) {
       <ArticleDetailPage
         item={recommend}
         heading={{ first: "Recom", second: "mend" }}
+        headingJa="おすすめホッピー居酒屋"
         articleClass = "recommend"
       />
     </>

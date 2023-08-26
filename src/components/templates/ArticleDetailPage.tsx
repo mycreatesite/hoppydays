@@ -38,6 +38,7 @@ export default function ArticleDetailPage({
         <FvBg fvBgClass="underPage" />
         <Container containerClass="smallContainer">
           <HeadingContent
+            hasH1={false}
             heading={{ first: heading.first, second: heading.second }}
             headingJa={headingJa}
           />

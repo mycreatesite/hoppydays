@@ -43,6 +43,7 @@ export default function Search() {
         loading={loading}
         path="recommend"
         heading={{ first: "Recom", second: "mend" }}
+        headingJa="おすすめホッピー居酒屋"
       >
         <SearchGroup keyword={keyword}/>
       </SectionListPage>

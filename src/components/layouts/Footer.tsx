@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={`${styles.bgLogo}`}>
         <Image
           src="/common/logo-yellow.svg"
-          alt=""
+          alt={process.env.NEXT_PUBLIC_SITE_NAME as string}
           height={218}
           width={1536}
         />

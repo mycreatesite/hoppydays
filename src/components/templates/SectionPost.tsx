@@ -23,11 +23,11 @@ const SectionPost = ({ children, setting }: Props) => {
       <section className={`${styles.post} ${setting.sectionClass} js-scrollAddClass`}>
         <Container containerClass="commonContainer overFlowHidden">
           <div className={`${styles.titleGroup}`}>
-            <p className={`${styles.shoulder}`}>{setting.shoulder}</p>
-            <h2 className={`${styles.title} js-scrollParallax-post`}>
+            <h2 className={`${styles.shoulder}`}>{setting.shoulder}</h2>
+            <p className={`${styles.title} js-scrollParallax-post`}>
               {splitTextWithSpan(setting.titleFirst, 200)}
               <span className={`${styles.outline}`}>{splitTextWithSpan(setting.titleSecond, 200)}</span>
-            </h2>
+            </p>
           </div>
         </Container>
         <div className={`${styles.sliderOuter}`}>

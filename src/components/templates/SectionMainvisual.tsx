@@ -16,7 +16,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
           <div className={`${styles.copy} ${styles.copy01}`}>
             <div className={`${styles.inner}`}>
               <Image
-                src="/img-mv-copy.svg"
+                src="/common/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
                 width={5480}
@@ -24,7 +24,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 priority={true}
               />
               <Image
-                src="/img-mv-copy.svg"
+                src="/common/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
                 width={5480}
@@ -36,7 +36,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
           <div className={`${styles.copy} ${styles.copy02}`}>
             <div className={`${styles.inner}`}>
               <Image
-                src="/img-mv-copy.svg"
+                src="/common/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
                 width={5480}
@@ -44,7 +44,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 priority={true}
               />
               <Image
-                src="/img-mv-copy.svg"
+                src="/common/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
                 width={5480}
@@ -56,7 +56,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
           <div className={`${styles.copy} ${styles.copy03}`}>
             <div className={`${styles.inner}`}>
               <Image
-                src="/img-mv-copy.svg"
+                src="/common/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
                 width={5480}
@@ -64,7 +64,7 @@ const SectionMainvisual = ({ fvBgClass }: Props) => {
                 priority={true}
               />
               <Image
-                src="/img-mv-copy.svg"
+                src="/common/img-mv-copy.svg"
                 alt="Hoppy brews your life."
                 height={120}
                 width={5480}

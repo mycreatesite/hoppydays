@@ -69,7 +69,7 @@ export default function ArticleDetailPage({
             </div>
             <div className={`${styles.image}`}>
               <Image
-                src={`${item.image.url}?w=1200&q=70&fm=webp`}
+                src={item.image ? `${item.image.url}?w=1200&q=70&fm=webp` : "/common/img-noimg.svg"}
                 alt={item.name}
                 height={528}
                 width={800}

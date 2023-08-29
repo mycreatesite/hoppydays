@@ -5,7 +5,7 @@ export type Recommend = {
   link: string;
   body: string;
   image: {
-    url: string;
+    url?: string;
     height: number;
     width: number;
   };

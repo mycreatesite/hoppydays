@@ -17,7 +17,7 @@ const Header = () => {
             <h1 className={`${styles.logo}`}>
               <Link href="/" aria-label="Home">
                 <Image
-                  src="/logo.svg"
+                  src="/common/logo.svg"
                   alt={process.env.NEXT_PUBLIC_SITE_NAME as string}
                   height={30}
                   width={212}
@@ -30,7 +30,7 @@ const Header = () => {
             <div className={`${styles.logo}`}>
               <Link href="/" aria-label="Home">
                 <Image
-                  src="/logo.svg"
+                  src="/common/logo.svg"
                   alt={process.env.NEXT_PUBLIC_SITE_NAME as string}
                   height={30}
                   width={212}

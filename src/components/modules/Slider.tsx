@@ -54,7 +54,7 @@ const Slider = ({ items, path }: Props) => {
             <Link href={`/${path}/${item.id}`} className={`${styles.item}`}>
               <div className={`${styles.image}`}>
                 <Image
-                  src={`${item.image.url}?w=1200&q=70&fm=webp`}
+                  src={item.image ? `${item.image.url}?w=1200&q=70&fm=webp` : "/common/img-noimg.svg"}
                   alt={item.name}
                   height={512}
                   width={768}

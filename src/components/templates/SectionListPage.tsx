@@ -55,7 +55,7 @@ export default function SectionListPage({ items, loading, path, heading, heading
                       <Link href={`/${path}/${item.id}`}>
                         <div className={`${styles.image}`}>
                           <Image
-                            src={item.image.url}
+                            src={item.image ? `${item.image.url}?w=800&q=70&fm=webp` : "/common/img-noimg.svg"}
                             alt={item.name}
                             height={338}
                             width={507}

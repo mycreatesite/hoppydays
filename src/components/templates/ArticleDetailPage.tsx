@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
@@ -6,9 +5,9 @@ import FvBg from "@/components/modules/FvBg";
 import styles from "@/styles/components/templates/ArticleDetailPage.module.scss";
 import Button from "@/components/elements/Button";
 import Container from "@/components/layouts/Container";
+import ClipPath from "../modules/ClipPath";
 import HeadingContent from "@/components/modules/HeadingContent"
 import { sawarabiGothic } from "@/components/util/font";
-import { splitTextWithSpan } from "../util/splitTextWithSpan";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc"
 import timezone from "dayjs/plugin/timezone"
@@ -68,6 +67,7 @@ export default function ArticleDetailPage({
               )}
             </div>
             <div className={`${styles.image}`}>
+              <ClipPath/>
               <Image
                 src={item.image ? `${item.image.url}?w=1200&q=70&fm=webp` : "/common/img-noimg.svg"}
                 alt={item.name}

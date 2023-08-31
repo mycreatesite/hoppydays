@@ -9,6 +9,7 @@ import Container from "@/components/layouts/Container";
 import HeadingContent from "@/components/modules/HeadingContent"
 import { sawarabiGothic } from "@/components/util/font";
 import Loading from "../modules/Loading";
+import ClipPath from "../modules/ClipPath";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc"
 import timezone from "dayjs/plugin/timezone"
@@ -54,6 +55,7 @@ export default function SectionListPage({ items, loading, path, heading, heading
                     >
                       <Link href={`/${path}/${item.id}`}>
                         <div className={`${styles.image}`}>
+                          <ClipPath/>
                           <Image
                             src={item.image ? `${item.image.url}?w=800&q=70&fm=webp` : "/common/img-noimg.svg"}
                             alt={item.name}

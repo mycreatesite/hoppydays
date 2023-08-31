@@ -5,6 +5,7 @@ import { Mousewheel } from "swiper/modules";
 import "swiper/css";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
+import ClipPath from "./ClipPath";
 import styles from "@/styles/components/modules/Slider.module.scss";
 import { sawarabiGothic } from "../util/font";
 import dayjs from "dayjs";
@@ -53,12 +54,15 @@ const Slider = ({ items, path }: Props) => {
           >
             <Link href={`/${path}/${item.id}`} className={`${styles.item}`}>
               <div className={`${styles.image}`}>
-                <Image
-                  src={item.image ? `${item.image.url}?w=1200&q=70&fm=webp` : "/common/img-noimg.svg"}
-                  alt={item.name}
-                  height={512}
-                  width={768}
-                />
+                <div className={`${styles.cover}`}>
+                  <ClipPath/>
+                  <Image
+                    src={item.image ? `${item.image.url}?w=1200&q=70&fm=webp` : "/common/img-noimg.svg"}
+                    alt={item.name}
+                    height={512}
+                    width={768}
+                  />
+                </div>
               </div>
               <div className={`${styles.content}`}>
                 {isNippo && <time dateTime={item.date} className={`${styles.date}`}>{dayjs(item.date).tz('Asia/Tokyo').format('YYYY.MMDD')}</time>}

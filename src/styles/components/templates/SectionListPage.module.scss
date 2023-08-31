@@ -9,7 +9,7 @@
 .list {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 64px;
+  row-gap: 40px;
   padding-top: 40px;
   @include variables.mq(tab) {
     padding-top: 60px;

@@ -14,10 +14,10 @@ export default function NippoList({ nippos }: Props) {
   return (
     <>
       <NextSeo
-        title={`${PAGE_TITLE}│${process.env.NEXT_PUBLIC_SITE_NAME}`}
+        title={`${PAGE_TITLE} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`}
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/nippo`,
-          title: `${PAGE_TITLE}│${process.env.NEXT_PUBLIC_SITE_NAME}`,
+          title: `${PAGE_TITLE} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         }}
       />
       <SectionListPage

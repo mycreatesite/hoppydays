@@ -11,11 +11,11 @@ export default function NippoId({nippo}:Props) {
   return (
     <>
       <NextSeo
-        title={`${nippo.title}│${process.env.NEXT_PUBLIC_SITE_NAME}`}
+        title={`${nippo.title} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`}
         description={nippo.name}
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/nippo/${nippo.id}`,
-          title: `${nippo.title}│${process.env.NEXT_PUBLIC_SITE_NAME}`,
+          title: `${nippo.title} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`,
           description: nippo.name,
           images: [
             {

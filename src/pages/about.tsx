@@ -11,10 +11,10 @@ export default function About() {
   return (
     <>
       <NextSeo
-        title={`${PAGE_TITLE}│${process.env.NEXT_PUBLIC_SITE_NAME}`}
+        title={`${PAGE_TITLE} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`}
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/about`,
-          title: `${PAGE_TITLE}│${process.env.NEXT_PUBLIC_SITE_NAME}`,
+          title: `${PAGE_TITLE} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         }}
       />
       <ArticleGeneralPage

@@ -12,11 +12,11 @@ export default function RecommendId({recommend}:Props) {
   return (
     <>
       <NextSeo
-        title={`${recommend.name}│${process.env.NEXT_PUBLIC_SITE_NAME}`}
+        title={`${recommend.name} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`}
         description={recommend.area}
         openGraph={{
           url: `${process.env.NEXT_PUBLIC_SITE_URL}/recommend/${recommend.id}`,
-          title: `${recommend.name}│${process.env.NEXT_PUBLIC_SITE_NAME}`,
+          title: `${recommend.name} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`,
           description: recommend.area,
           images: [
             {

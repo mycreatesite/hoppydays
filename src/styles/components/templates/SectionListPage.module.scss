@@ -9,10 +9,9 @@
 .list {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 40px;
-  padding-top: 40px;
+  row-gap: 64px;
+  padding-top: 64px;
   @include variables.mq(tab) {
-    padding-top: 60px;
     grid-template-columns: 1fr 1fr;
     column-gap: calc(40 / 1920 * 100dvw);
     row-gap: calc(120 / 1920 * 100dvw);

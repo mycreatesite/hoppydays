@@ -23,7 +23,7 @@ export default function About() {
       >
         <div className={`${styles.aboutContent}`}>
           <section>
-            <h2>サイト管理人</h2>
+            <h2>サイト管理人より</h2>
             <p>こんにちは。<br/>千葉県在住のWEBデザイナー、ma-ya&apos;s CREATE&#xff3b;まーやずくりえいと&#xff3d;と申します。</p>
             <p>ホッピーとつまみとうさぎを愛するおじさんデザイナーです。</p>
             <p>「HOPPY DAYS」はぼくの独断と偏見に基づいて構築したホッピーのファンサイトのようなものです。</p>

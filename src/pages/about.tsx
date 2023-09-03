@@ -36,7 +36,7 @@ export default function About() {
             <h2>SNS</h2>
             <p>
               <Link href={`https://twitter.com/hello_myscreate`} target="_blank" rel="noopener noreferrer">
-                <LogoX color="black"/>
+                <LogoX/>
               </Link>
             </p>
           </section>

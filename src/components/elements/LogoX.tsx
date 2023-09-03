@@ -1,7 +1,3 @@
-type Props = {
-  color: string;
-};
-
 const LogoX = () => {
   return (
     <svg

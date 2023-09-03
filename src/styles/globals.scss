@@ -1,9 +1,10 @@
 @use "./variables";
 
 :root {
-  --color-base: #FFE349;
+  --color-base: #ffe349;
   --color-base-dark: #756200;
   --color-text: #222222;
+  --color-text-light: #666666;
   --color-text-gray: #919191;
   --z-index-header: 50;
   --margin-small: calc(80 / 1920 * 100%);
@@ -24,7 +25,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 2;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 a {
@@ -32,7 +33,16 @@ a {
   text-decoration: none;
 }
 
-ul, li {
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+}
+
+ul,
+li {
   list-style: none;
   padding: 0;
   margin: 0;

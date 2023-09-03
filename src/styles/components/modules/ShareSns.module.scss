@@ -1,0 +1,75 @@
+@use "../../variables";
+
+.shareSns {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 8px;
+  overflow: hidden;
+  .text {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    column-gap: 8px;
+    font-size: .75rem;
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 1rem;
+      background-color: currentColor;
+    }
+  }
+  .sns {
+    font-size: 1.625rem;
+    transition: color .4s;
+  }
+  .button {
+    position: relative;
+    .copied {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) translateX(101%);
+      transform-origin: right;
+      font-size: .75rem;
+      line-height: 1.25;
+      white-space: nowrap;
+      padding: 5px 14px;
+      border-radius: 100px 0 0 100px;
+      transition: transform .4s;
+      &.is-active {
+        transform: translateY(-50%) translateX(0);
+      }
+    }
+  }
+  &.gray {
+    color: var(--color-text-gray);
+    .sns {
+      &:hover {
+        color: #fff;
+      }
+    }
+    .button {
+      .copied {
+        color: var(--color-text);
+        background-color: #fff;
+      }
+    }
+  }
+  &.black {
+    color: var(--color-text);
+    .sns {
+      &:hover {
+        color: var(--color-text-light);
+      }
+    }
+    .button {
+      .copied {
+        color: #fff;
+        background-color: var(--color-text);
+      }
+    }
+  }
+}

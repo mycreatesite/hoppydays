@@ -1,7 +1,8 @@
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import Image from "next/image";
-import ArticleGeneralPage from "@/components/templates/ArticleGeneralPage"
+import ArticleGeneralPage from "@/components/templates/ArticleGeneralPage";
+import LogoX from "@/components/elements/LogoX";
 import styles from "@/styles/pages/About.module.scss";
 
 export default function About() {
@@ -35,12 +36,7 @@ export default function About() {
             <h2>SNS</h2>
             <p>
               <Link href={`https://twitter.com/hello_myscreate`} target="_blank" rel="noopener noreferrer">
-                <Image
-                  src="/common/logo-x.svg"
-                  alt="X (Twitter)"
-                  height={20}
-                  width={20}
-                />
+                <LogoX color="black"/>
               </Link>
             </p>
           </section>

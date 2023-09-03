@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Container from '@/components/layouts/Container'
+import Container from "@/components/layouts/Container";
+import ShareSns from "../modules/ShareSns";
 import styles from "@/styles/components/layouts/Footer.module.scss";
 
 const Footer = () => {
@@ -19,29 +20,44 @@ const Footer = () => {
           <p className={`${styles.message}`}>For All of Hoppy Lovers.</p>
         </div>
         <div className={`${styles.bottom}`}>
-          <div className={`${styles.logoGroup}`}>
-            <Link href={`https://myscreate.com/`} target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/common/logo-myc.svg"
-                alt="ma-ya&#39;s CREATE"
-                height={40}
-                width={80}
-              />
-            </Link>
-            <Link href={`https://wicd-02-next.vercel.app/`} target="_blank" rel="noopener noreferrer">
-              <Image
-                src="/common/logo-wicd.svg"
-                alt="WHAT I CAN DO."
-                height={20}
-                width={80}
-              />
-            </Link>
+          <div className={`${styles.content}`}>
+            <p className={`${styles.about}`}>
+              <Link href="/about">About this website</Link>
+            </p>
+            <ShareSns color="gray"/>
+            <div className={`${styles.logoGroup}`}>
+              <Link
+                href={`https://myscreate.com/`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/common/logo-myc.svg"
+                  alt="ma-ya&#39;s CREATE"
+                  height={40}
+                  width={80}
+                />
+              </Link>
+              <Link
+                href={`https://wicd-02-next.vercel.app/`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/common/logo-wicd.svg"
+                  alt="WHAT I CAN DO."
+                  height={20}
+                  width={80}
+                />
+              </Link>
+            </div>
+            <p className={`${styles.copyright}`}>
+              © Copyright 2023 │ ma-ya&apos;s CREATE All rights reserved.
+            </p>
           </div>
-          <p className={`${styles.about}`}><Link href="/about">About this website</Link></p>
-          <p className={`${styles.copyright}`}>© Copyright 2023 │ ma-ya&apos;s CREATE All rights reserved.</p>
         </div>
       </Container>
     </footer>
-  )
-}  
-export default Footer
+  );
+};
+export default Footer;

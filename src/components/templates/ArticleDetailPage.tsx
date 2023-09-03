@@ -5,12 +5,13 @@ import FvBg from "@/components/modules/FvBg";
 import styles from "@/styles/components/templates/ArticleDetailPage.module.scss";
 import Button from "@/components/elements/Button";
 import Container from "@/components/layouts/Container";
+import ShareSns from "../modules/ShareSns";
 import ClipPath from "../modules/ClipPath";
-import HeadingContent from "@/components/modules/HeadingContent"
+import HeadingContent from "@/components/modules/HeadingContent";
 import { sawarabiGothic } from "@/components/util/font";
 import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc"
-import timezone from "dayjs/plugin/timezone"
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -33,7 +34,9 @@ export default function ArticleDetailPage({
   const isNippo = "date" in item;
   return (
     <>
-      <article className={`${styles.detailPage} ${articleClass} js-scrollAddClass`}>
+      <article
+        className={`${styles.detailPage} ${articleClass} js-scrollAddClass`}
+      >
         <FvBg fvBgClass="underPage" />
         <Container containerClass="smallContainer">
           <HeadingContent
@@ -45,7 +48,7 @@ export default function ArticleDetailPage({
             <div className={`${styles.group}`}>
               {isNippo && (
                 <time dateTime={item.date} className={`${styles.date}`}>
-                  {dayjs(item.date).tz('Asia/Tokyo').format("YYYY.MMDD")}
+                  {dayjs(item.date).tz("Asia/Tokyo").format("YYYY.MMDD")}
                 </time>
               )}
               <h1 className={`${styles.title} ${sawarabiGothic.className}`}>
@@ -60,25 +63,37 @@ export default function ArticleDetailPage({
                     btnSetting={{
                       url: item.link,
                       size: "size-small",
-                      targetBlank: true
+                      targetBlank: true,
                     }}
-                  >店舗情報</Button>
+                  >
+                    店舗情報
+                  </Button>
                 </div>
               )}
             </div>
             <div className={`${styles.image}`}>
-              <ClipPath/>
+              <ClipPath />
               <Image
-                src={item.image ? `${item.image.url}?w=1200&q=70&fm=webp` : "/common/img-noimg.svg"}
+                src={
+                  item.image
+                    ? `${item.image.url}?w=1200&q=70&fm=webp`
+                    : "/common/img-noimg.svg"
+                }
                 alt={item.name}
                 height={528}
                 width={800}
-                loading = 'eager'
+                loading="eager"
                 priority={true}
               />
             </div>
-            <p className={`${styles.body} ${sawarabiGothic.className}`} dangerouslySetInnerHTML={{ __html: item.body.replace(/\r?\n/g, '<br>') }} />
+            <p
+              className={`${styles.body} ${sawarabiGothic.className}`}
+              dangerouslySetInnerHTML={{
+                __html: item.body.replace(/\r?\n/g, "<br>"),
+              }}
+            />
           </div>
+          <ShareSns color="black"/>
           <div className={`${styles.link}`}>
             <Button
               btnSetting={{

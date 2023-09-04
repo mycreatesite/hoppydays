@@ -43,7 +43,6 @@ export default function ArticleDetailPage({
     "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY as string,
   };
   const handleLike = async () => {
-    console.log(endpoint)
     if (likedFlag) return;
     await fetch(endpoint, {
       method: "PATCH",

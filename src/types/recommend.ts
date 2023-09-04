@@ -4,6 +4,7 @@ export type Recommend = {
   area: string;
   link: string;
   body: string;
+  like?: number;
   image: {
     url?: string;
     height: number;

@@ -26,6 +26,7 @@ export default function SearchGroup({ keyword }: Props) {
             onKeyDown={(e) => HandlePressSearchEnter(router, e)}
           />
           <button
+            aria-label="Search"
             className={`${styles.searchButton}`}
             onClick={() => HandleClickSearchButton(router)}
           >

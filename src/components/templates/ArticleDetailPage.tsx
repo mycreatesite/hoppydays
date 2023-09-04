@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
+import { useState } from "react";
 import FvBg from "@/components/modules/FvBg";
 import styles from "@/styles/components/templates/ArticleDetailPage.module.scss";
 import Button from "@/components/elements/Button";
@@ -9,6 +10,7 @@ import ShareSns from "../modules/ShareSns";
 import ClipPath from "../modules/ClipPath";
 import HeadingContent from "@/components/modules/HeadingContent";
 import { sawarabiGothic } from "@/components/util/font";
+import LottieHeart from "../elements/LottieHeart";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
@@ -22,20 +24,45 @@ type Props = {
     second: string;
   };
   headingJa: string;
-  articleClass: string;
+  articleType: string;
 };
 
 export default function ArticleDetailPage({
   item,
   heading,
   headingJa,
-  articleClass,
+  articleType,
 }: Props) {
   const isNippo = "date" in item;
+
+  const [like, setLike] = useState(item.like ? item.like : 0);
+  const [likedFlag, setLikedFlag] = useState(false);
+  const endpoint = `https://hoppydays.microcms.io/api/v1/${articleType}/${item.id}?fields=like`;
+  const headers = {
+    "Content-Type": "application/json",
+    "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY as string,
+  };
+  const handleLike = async () => {
+    console.log(endpoint)
+    if (likedFlag) return;
+    await fetch(endpoint, {
+      method: "PATCH",
+      headers,
+      body: JSON.stringify({ like: (like as number) + 1 }),
+    });
+    await fetch(endpoint, {
+      method: "GET",
+      headers,
+    })
+      .then((res) => res.json())
+      .then((json) => setLike(json.like));
+    setLikedFlag(true);
+  };
+
   return (
     <>
       <article
-        className={`${styles.detailPage} ${articleClass} js-scrollAddClass`}
+        className={`${styles.detailPage} ${styles[articleType]} js-scrollAddClass`}
       >
         <FvBg fvBgClass="underPage" />
         <Container containerClass="smallContainer">
@@ -93,7 +120,19 @@ export default function ArticleDetailPage({
               }}
             />
           </div>
-          <ShareSns color="black"/>
+          <div className={`${styles.contentFooter}`}>
+            <div className={`${styles.likeGroup}`}>
+              <button onClick={handleLike}>
+                <LottieHeart />
+              </button>
+              <span className={`${styles.num} ${sawarabiGothic.className}`}>
+                {like}
+              </span>
+            </div>
+            <div className={`${styles.shareSnsGroup}`}>
+              <ShareSns color="black" />
+            </div>
+          </div>
           <div className={`${styles.link}`}>
             <Button
               btnSetting={{

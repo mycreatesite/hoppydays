@@ -29,7 +29,7 @@ export default function NippoId({nippo}:Props) {
         item={nippo}
         heading={{ first: "Nip", second: "po" }}
         headingJa="ホッピー日報"
-        articleClass = "nippo"
+        articleType = "nippo"
       />
     </>
   );

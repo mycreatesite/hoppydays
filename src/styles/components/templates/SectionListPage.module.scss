@@ -58,6 +58,19 @@
         font-size: 1rem;
       }
     }
+    .likeGroup {
+      margin-top: 6px;
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: flex-start;
+      justify-content: flex-start;
+      column-gap: 4px;
+      color: var(--color-base-dark);
+      .num {
+        font-size: 14px;
+        line-height: 1;
+      }
+    }
     &::after {
       content: '';
       display: block;

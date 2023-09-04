@@ -30,7 +30,7 @@ export default function RecommendId({recommend}:Props) {
         item={recommend}
         heading={{ first: "Recom", second: "mend" }}
         headingJa="おすすめホッピー居酒屋"
-        articleClass = "recommend"
+        articleType = "recommend"
       />
     </>
   );

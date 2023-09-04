@@ -4,6 +4,7 @@ export type Nippo = {
   title: string;
   name: string;
   body: string;
+  like?: string;
   image: {
     url: string;
     height: number;

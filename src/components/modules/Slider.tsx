@@ -8,9 +8,10 @@ import { Recommend } from "@/types/recommend";
 import ClipPath from "./ClipPath";
 import styles from "@/styles/components/modules/Slider.module.scss";
 import { sawarabiGothic } from "../util/font";
+import { GoHeart } from "react-icons/go";
 import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc"
-import timezone from "dayjs/plugin/timezone"
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -49,15 +50,19 @@ const Slider = ({ items, path }: Props) => {
             key={item.id}
             className={styles.slide}
             style={{
-              transitionDelay: `${index * 300}ms`
+              transitionDelay: `${index * 300}ms`,
             }}
           >
             <Link href={`/${path}/${item.id}`} className={`${styles.item}`}>
               <div className={`${styles.image}`}>
                 <div className={`${styles.cover}`}>
-                  <ClipPath/>
+                  <ClipPath />
                   <Image
-                    src={item.image ? `${item.image.url}?w=1200&q=70&fm=webp` : "/common/img-noimg.svg"}
+                    src={
+                      item.image
+                        ? `${item.image.url}?w=1200&q=70&fm=webp`
+                        : "/common/img-noimg.svg"
+                    }
                     alt={item.name}
                     height={512}
                     width={768}
@@ -65,17 +70,39 @@ const Slider = ({ items, path }: Props) => {
                 </div>
               </div>
               <div className={`${styles.content}`}>
-                {isNippo && <time dateTime={item.date} className={`${styles.date}`}>{dayjs(item.date).tz('Asia/Tokyo').format('YYYY.MMDD')}</time>}
-                {isNippo ? (
-                  <h3 className={`${styles.title} ${sawarabiGothic.className}`}>{item.title}</h3>
-                ) : (
-                  <h3 className={`${styles.title} ${sawarabiGothic.className}`}>{item.name}</h3>
+                {isNippo && (
+                  <time dateTime={item.date} className={`${styles.date}`}>
+                    {dayjs(item.date).tz("Asia/Tokyo").format("YYYY.MMDD")}
+                  </time>
                 )}
                 {isNippo ? (
-                  <p className={`${styles.subtitle} ${sawarabiGothic.className}`}>{item.name}</p>
+                  <h3 className={`${styles.title} ${sawarabiGothic.className}`}>
+                    {item.title}
+                  </h3>
                 ) : (
-                  <p className={`${styles.subtitle} ${sawarabiGothic.className}`}>{item.area}</p>
+                  <h3 className={`${styles.title} ${sawarabiGothic.className}`}>
+                    {item.name}
+                  </h3>
                 )}
+                {isNippo ? (
+                  <p
+                    className={`${styles.subtitle} ${sawarabiGothic.className}`}
+                  >
+                    {item.name}
+                  </p>
+                ) : (
+                  <p
+                    className={`${styles.subtitle} ${sawarabiGothic.className}`}
+                  >
+                    {item.area}
+                  </p>
+                )}
+                <div className={`${styles.likeGroup}`}>
+                  <GoHeart />
+                  <span className={`${styles.num} ${sawarabiGothic.className}`}>
+                    {item.like ? item.like : 0}
+                  </span>
+                </div>
               </div>
             </Link>
           </SwiperSlide>

@@ -1,14 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {client} from "../../../libs/client";
 
-type Data = {
-  name: string
-}
-
 export const getSearchRecommends = async (
 
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 
   ) => {
   // 検索したいキーワードをqueryから取得

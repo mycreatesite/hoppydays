@@ -9,6 +9,7 @@ import Container from "@/components/layouts/Container";
 import HeadingContent from "@/components/modules/HeadingContent"
 import { sawarabiGothic } from "@/components/util/font";
 import Loading from "../modules/Loading";
+import { GoHeart } from "react-icons/go";
 import ClipPath from "../modules/ClipPath";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc"
@@ -81,6 +82,10 @@ export default function SectionListPage({ items, loading, path, heading, heading
                           >
                             {isNippo ? item.name : item.area}
                           </p>
+                          <div className={`${styles.likeGroup}`}>
+                            <GoHeart/>
+                            <span className={`${styles.num} ${sawarabiGothic.className}`}>{item.like ? item.like : 0}</span>
+                          </div>
                         </div>
                       </Link>
                     </li>

@@ -12,7 +12,7 @@
 }
 
 .content {
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   .date {
     display: block;
     color: var(--color-base-dark);
@@ -62,6 +62,7 @@
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
+  align-items: center;
   .likeGroup {
     display: grid;
     grid-template-columns: auto auto;

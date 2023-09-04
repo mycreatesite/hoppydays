@@ -4,7 +4,7 @@
 .detailPage {
   padding-top: 150px;
   padding-bottom: 160px;
-  &[class*="recommend"] {
+  &.recommend {
     .group {
       text-align: center;
     }

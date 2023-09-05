@@ -45,7 +45,7 @@ export default function ArticleDetailPage({
     "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY as string,
   };
 
-  const handleLike = async () => {
+  const handleLike = () => {
     /** ボタン押下済み or localstorageにidが存在したら何もしない */
     if (likedFlag || lsLikedFlag) return;
     /** localstorageからいいね済み記事id配列を生成し、当該idをpushしたものを再度localstorageにセット */

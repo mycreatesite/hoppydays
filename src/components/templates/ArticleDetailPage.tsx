@@ -62,7 +62,7 @@ export default function ArticleDetailPage({
       headers,
     })
       .then((res) => res.json())
-      .then((json) => setLike(json.like));
+      .then((json) => setLike(json.like ? json.like : 0));
   }
 
   return (

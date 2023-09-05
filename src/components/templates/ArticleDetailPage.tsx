@@ -58,7 +58,11 @@ export default function ArticleDetailPage({
       method: "PATCH",
       headers,
       body: JSON.stringify({ like: (likeCount as number) + 1 }),
-    }).then(() => fetchAndSetLikeCount());
+    })
+      .then(() => fetchAndSetLikeCount())
+      .catch((error) => {
+        console.error("patchAndFetchLikeCountの通信に失敗しました", error);
+      });
   }
   async function fetchAndSetLikeCount() {
     await fetch(endpoint, {
@@ -66,7 +70,10 @@ export default function ArticleDetailPage({
       headers,
     })
       .then((res) => res.json())
-      .then((json) => setLikeCount(json.like ? json.like : 0));
+      .then((json) => setLikeCount(json.like ? json.like : 0))
+      .catch((error) => {
+        console.error("fetchAndSetLikeCountの通信に失敗しました", error);
+      });
   }
 
   return (

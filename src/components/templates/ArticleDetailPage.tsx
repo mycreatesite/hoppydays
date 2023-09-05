@@ -157,7 +157,7 @@ export default function ArticleDetailPage({
           </div>
           <div className={`${styles.contentFooter}`}>
             <div className={`${styles.likeGroup}`}>
-              <button className={`${styles.likeButton} gtm-likeButton`} onClick={handleLike}>
+              <button className={`${styles.likeButton}`} onClick={handleLike}>
                 <LottieHeart lsLikedFlag={lsLikedFlag} />
               </button>
               <span className={`${styles.likeNum} ${sawarabiGothic.className}`}>

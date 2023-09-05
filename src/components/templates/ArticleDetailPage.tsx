@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Nippo } from "@/types/nippo";
 import { Recommend } from "@/types/recommend";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FvBg from "@/components/modules/FvBg";
 import styles from "@/styles/components/templates/ArticleDetailPage.module.scss";
 import Button from "@/components/elements/Button";
@@ -35,34 +35,38 @@ export default function ArticleDetailPage({
 }: Props) {
   const isNippo = "date" in item;
 
-  const [like, setLike] = useState(item.like ? item.like : 0);
+  const [likeCount, setLikeCount] = useState(item.like ? item.like : 0);
   const [likedFlag, setLikedFlag] = useState(false);
   const endpoint = `https://hoppydays.microcms.io/api/v1/${articleType}/${item.id}?fields=like`;
   const headers = {
     "Content-Type": "application/json",
     "X-MICROCMS-API-KEY": process.env.NEXT_PUBLIC_API_KEY as string,
   };
+
   const handleLike = async () => {
     if (likedFlag) return;
-    patchLike();
-    getLike();
+    patchAndFetchLikeCount();
     setLikedFlag(true);
   };
-  getLike()
-  async function patchLike() {
+  useEffect(() => {
+    fetchAndSetLikeCount();
+    // eslint-disable-next-line
+  }, []);
+
+  async function patchAndFetchLikeCount() {
     await fetch(endpoint, {
       method: "PATCH",
       headers,
-      body: JSON.stringify({ like: (like as number) + 1 }),
-    });
+      body: JSON.stringify({ like: (likeCount as number) + 1 }),
+    }).then(() => fetchAndSetLikeCount());
   }
-  async function getLike() {
+  async function fetchAndSetLikeCount() {
     await fetch(endpoint, {
       method: "GET",
       headers,
     })
       .then((res) => res.json())
-      .then((json) => setLike(json.like ? json.like : 0));
+      .then((json) => setLikeCount(json.like ? json.like : 0));
   }
 
   return (
@@ -132,7 +136,7 @@ export default function ArticleDetailPage({
                 <LottieHeart />
               </button>
               <span className={`${styles.num} ${sawarabiGothic.className}`}>
-                {like}
+                {likeCount}
               </span>
             </div>
             <div className={`${styles.shareSnsGroup}`}>

@@ -44,19 +44,26 @@ export default function ArticleDetailPage({
   };
   const handleLike = async () => {
     if (likedFlag) return;
+    patchLike();
+    getLike();
+    setLikedFlag(true);
+  };
+  getLike()
+  async function patchLike() {
     await fetch(endpoint, {
       method: "PATCH",
       headers,
       body: JSON.stringify({ like: (like as number) + 1 }),
     });
+  }
+  async function getLike() {
     await fetch(endpoint, {
       method: "GET",
       headers,
     })
       .then((res) => res.json())
       .then((json) => setLike(json.like));
-    setLikedFlag(true);
-  };
+  }
 
   return (
     <>

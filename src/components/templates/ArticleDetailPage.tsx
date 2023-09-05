@@ -37,6 +37,8 @@ export default function ArticleDetailPage({
 
   const [likeCount, setLikeCount] = useState(item.like ? item.like : 0);
   const [likedFlag, setLikedFlag] = useState(false);
+  const [lsLikedFlag, setLsLikedFlag] = useState(false);
+
   const endpoint = `https://hoppydays.microcms.io/api/v1/${articleType}/${item.id}?fields=like`;
   const headers = {
     "Content-Type": "application/json",
@@ -44,15 +46,31 @@ export default function ArticleDetailPage({
   };
 
   const handleLike = async () => {
-    if (likedFlag) return;
+    /** ボタン押下済み or localstorageにidが存在したら何もしない */
+    if (likedFlag || lsLikedFlag) return;
+    /** localstorageからいいね済み記事id配列を生成し、当該idをpushしたものを再度localstorageにセット */
+    let likedIdArray = makeLikedIdArrayFromLs();
+    likedIdArray.push(item.id);
+    localStorage.setItem("likedId", JSON.stringify(likedIdArray));
+    /** microCMSのいいねフィールドを更新かつ最新のいいねフィールドをフェッチ */
     patchAndFetchLikeCount();
     setLikedFlag(true);
   };
+
   useEffect(() => {
+    /** マウント時にlocalstorageのいいね済みidをチェック */
+    const likedIdArray = makeLikedIdArrayFromLs();
+    setLsLikedFlag(likedIdArray.includes(item.id));
+    /** microCMSの最新のいいねフィールドをフェッチしてセット */
     fetchAndSetLikeCount();
     // eslint-disable-next-line
   }, []);
 
+  function makeLikedIdArrayFromLs() {
+    const lsLikedId = localStorage.getItem("likedId");
+    const likedIdArray = lsLikedId ? JSON.parse(lsLikedId) : [];
+    return likedIdArray;
+  }
   async function patchAndFetchLikeCount() {
     await fetch(endpoint, {
       method: "PATCH",
@@ -140,7 +158,7 @@ export default function ArticleDetailPage({
           <div className={`${styles.contentFooter}`}>
             <div className={`${styles.likeGroup}`}>
               <button onClick={handleLike}>
-                <LottieHeart />
+                <LottieHeart lsLikedFlag={lsLikedFlag} />
               </button>
               <span className={`${styles.num} ${sawarabiGothic.className}`}>
                 {likeCount}

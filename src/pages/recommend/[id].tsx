@@ -20,7 +20,9 @@ export default function RecommendId({recommend}:Props) {
           description: recommend.area,
           images: [
             {
-              url: recommend.image ? recommend.image.url as string : `${process.env.NEXT_PUBLIC_SITE_URL}/common/img-noimg.svg`,
+              url: recommend.image
+                ? `${recommend.image.url}?w=1200&h=630&fit=crop&q=70` as string
+                : `${process.env.NEXT_PUBLIC_SITE_URL}/common/img-noimg.svg`,
               alt: recommend.name
             },
           ],

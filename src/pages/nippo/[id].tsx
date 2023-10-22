@@ -19,7 +19,7 @@ export default function NippoId({nippo}:Props) {
           description: nippo.name,
           images: [
             {
-              url: nippo.image.url,
+              url: `${nippo.image.url}?w=1200&h=630&fit=crop&q=70`,
               alt: nippo.title
             },
           ],

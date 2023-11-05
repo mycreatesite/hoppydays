@@ -1,0 +1,17 @@
+@use "../../variables";
+
+.pagination {
+  margin-top: 40px;
+}
+
+.list {
+  display: flex;
+  column-gap: 24px;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.active {
+  pointer-events: none;
+  opacity: .3;
+}

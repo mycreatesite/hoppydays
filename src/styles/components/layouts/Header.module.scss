@@ -8,6 +8,7 @@
   width: 100%;
   padding-top: 40px;
   padding-bottom: 40px;
+  pointer-events: none;
   @include variables.mq(sp) {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -23,6 +24,7 @@
 .logo {
   a {
     display: block;
+    pointer-events: auto;
   }
   img {
     width: 212px;
@@ -41,14 +43,15 @@
   letter-spacing: -.04em;
   line-height: 1;
   li + li {
-    margin-top: 12px;
+    margin-top: 14px;
   }
   li {
     a {
       position: relative;
       overflow: hidden;
-      display: inline-block;
+      display: block;
       height: calc(20em / 18);
+      pointer-events: auto;
       span {
         display: inline-block;
         transition: transform .4s cubic-bezier(0.87, 0, 0.13, 1);

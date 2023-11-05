@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import SectionListPage from "@/components/templates/SectionListPage";
 import SearchGroup from "@/components/modules/SearchGroup";
+import { LIST_PER_PAGE } from "@/components/util/globalSettings";
 
 export default function Search() {
 
@@ -40,6 +41,9 @@ export default function Search() {
     <>
       <SectionListPage
         items={recommends}
+        totalCount={recommends.length}
+        perPage={LIST_PER_PAGE}
+        isSearch={true}
         loading={loading}
         path="recommend"
         heading={{ first: "Recom", second: "mend" }}

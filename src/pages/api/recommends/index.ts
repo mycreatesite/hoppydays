@@ -15,6 +15,7 @@ export const getSearchRecommends = async (
     endpoint: "recommend",
     queries: {
       q: decodeURI(keyword),
+      limit: 100
     },
   });
   return res.status(200).json(response);

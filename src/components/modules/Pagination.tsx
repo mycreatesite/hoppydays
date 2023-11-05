@@ -138,7 +138,7 @@ export default function Pagination({
               )}
               {displayedPageArray.map((item, index) =>
                 currentPage === item ? (
-                  <li key={index} className={`${styles.item} ${styles.active}`}>
+                  <li key={index} className={`${styles.item} ${styles.active}`} tabIndex={-1}>
                     <span>{item}</span>
                     <Image
                       className={`${styles.blob}`}

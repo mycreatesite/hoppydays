@@ -9,31 +9,41 @@ export default function Search() {
 
   const router = useRouter();
 
-  let query;
+  let queryKeyword;
   if (typeof window !== "undefined") {
-    query = new URLSearchParams(window.location.search).get("keyword");
+    queryKeyword = new URLSearchParams(window.location.search).get("keyword");
   }
-  const [keyword, setKeyword] = useState(query || "");
+  let queryPage;
+  if (typeof window !== "undefined") {
+    queryPage = new URLSearchParams(window.location.search).get("page");
+  }
+
+  const [page, setPage] = useState(queryPage || "");
+  const [keyword, setKeyword] = useState(queryKeyword || "");
   const [recommends, setRecommends] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
   const [loading, setLoading] = useState(false);
   
   useEffect(() => {
+    setPage(router.query.page as string)
     setKeyword(router.query.keyword as string)
-  }, [router.query.keyword]);
+  }, [router.query.keyword, router.query.page]);
 
   useEffect(() => {
-    keyword !== undefined && searchRecommends();
+    page !== undefined && keyword !== undefined && searchRecommends();
     // eslint-disable-next-line
-  }, [keyword]);
+  }, [page,keyword]);
 
   async function searchRecommends() {
     setLoading(true);
     const res = await axios.get("../api/recommends", {
       params: {
         keyword,
+        page
       },
     });
     setRecommends(res.data.contents);
+    setTotalCount(res.data.totalCount);
     setLoading(false);
   }
 
@@ -41,7 +51,7 @@ export default function Search() {
     <>
       <SectionListPage
         items={recommends}
-        totalCount={recommends.length}
+        totalCount={totalCount}
         perPage={LIST_PER_PAGE}
         isSearch={true}
         loading={loading}

@@ -1,7 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import Container from "@/components/layouts/Container";
 import styles from "@/styles/components/modules/Pagination.module.scss";
+import { sawarabiGothic } from "../util/font";
+import { HiOutlineArrowRight } from "react-icons/hi";
+import { HiOutlineArrowLeft } from "react-icons/hi";
+import { PiArrowLineRightBold } from "react-icons/Pi";
+import { PiArrowLineLeftBold } from "react-icons/Pi";
 
 type Props = {
   totalCount: number;
@@ -49,14 +55,14 @@ export default function Pagination({
         <Container containerClass="largeContainer">
           {isSearch ? (
             // searchページ
-            <ul className={`${styles.list}`}>
+            <ul className={`${styles.list} ${sawarabiGothic.variable}`}>
               {routerQueryPage !== 1 && (
                 <>
                   <li className={`${styles.item} ${styles.first}`}>
                     <Link
                       href={`/${path}/search?keyword=${routerQueryKeyword}&page=1`}
                     >
-                      {"<<"}
+                      <PiArrowLineLeftBold title="first page" />
                     </Link>
                   </li>
                   <li className={`${styles.item} ${styles.previous}`}>
@@ -65,7 +71,7 @@ export default function Pagination({
                         routerQueryPage - 1
                       }`}
                     >
-                      {"<"}
+                      <HiOutlineArrowLeft title="previous page" />
                     </Link>
                   </li>
                 </>
@@ -74,6 +80,13 @@ export default function Pagination({
                 routerQueryPage === item ? (
                   <li key={index} className={`${styles.item} ${styles.active}`}>
                     <span>{item}</span>
+                    <Image
+                      className={`${styles.blob}`}
+                      src="/common/bg-blob-animation.svg"
+                      alt=""
+                      height={92}
+                      width={74}
+                    />
                   </li>
                 ) : (
                   <li key={index} className={`${styles.item}`}>
@@ -93,14 +106,14 @@ export default function Pagination({
                         routerQueryPage + 1
                       }`}
                     >
-                      {">"}
+                      <HiOutlineArrowRight title="next page" />
                     </Link>
                   </li>
                   <li className={`${styles.item} ${styles.last}`}>
                     <Link
                       href={`/${path}/search?keyword=${routerQueryKeyword}&page=${maxPage}`}
                     >
-                      {">>"}
+                      <PiArrowLineRightBold title="last page" />
                     </Link>
                   </li>
                 </>
@@ -108,14 +121,18 @@ export default function Pagination({
             </ul>
           ) : (
             // searchページ以外
-            <ul className={`${styles.list}`}>
+            <ul className={`${styles.list} ${sawarabiGothic.variable}`}>
               {currentPage !== 1 && (
                 <>
                   <li className={`${styles.item} ${styles.first}`}>
-                    <Link href={`/${path}/page/1`}>{"<<"}</Link>
+                    <Link href={`/${path}/page/1`}>
+                      <PiArrowLineLeftBold title="first page" />
+                    </Link>
                   </li>
                   <li className={`${styles.item} ${styles.previous}`}>
-                    <Link href={`/${path}/page/${currentPage - 1}`}>{"<"}</Link>
+                    <Link href={`/${path}/page/${currentPage - 1}`}>
+                      <HiOutlineArrowLeft title="previous page" />
+                    </Link>
                   </li>
                 </>
               )}
@@ -123,6 +140,13 @@ export default function Pagination({
                 currentPage === item ? (
                   <li key={index} className={`${styles.item} ${styles.active}`}>
                     <span>{item}</span>
+                    <Image
+                      className={`${styles.blob}`}
+                      src="/common/bg-blob-animation.svg"
+                      alt=""
+                      height={92}
+                      width={74}
+                    />
                   </li>
                 ) : (
                   <li key={index} className={`${styles.item}`}>
@@ -133,10 +157,14 @@ export default function Pagination({
               {currentPage !== maxPage && (
                 <>
                   <li className={`${styles.item} ${styles.next}`}>
-                    <Link href={`/${path}/page/${currentPage + 1}`}>{">"}</Link>
+                    <Link href={`/${path}/page/${currentPage + 1}`}>
+                      <HiOutlineArrowRight title="next page" />
+                    </Link>
                   </li>
                   <li className={`${styles.item} ${styles.last}`}>
-                    <Link href={`/${path}/page/${maxPage}`}>{">>"}</Link>
+                    <Link href={`/${path}/page/${maxPage}`}>
+                      <PiArrowLineRightBold title="last page" />
+                    </Link>
                   </li>
                 </>
               )}

@@ -6,8 +6,8 @@ import styles from "@/styles/components/modules/Pagination.module.scss";
 import { sawarabiGothic } from "../util/font";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { HiOutlineArrowLeft } from "react-icons/hi";
-import { PiArrowLineRightBold } from "react-icons/Pi";
-import { PiArrowLineLeftBold } from "react-icons/Pi";
+import { PiArrowLineRightBold } from "react-icons/pi";
+import { PiArrowLineLeftBold } from "react-icons/pi";
 
 type Props = {
   totalCount: number;

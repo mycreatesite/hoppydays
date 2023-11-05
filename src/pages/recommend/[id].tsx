@@ -38,14 +38,16 @@ export default function RecommendId({recommend}:Props) {
   );
 };
 
+// 動的ページURLを生成
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "recommend" });
-  const paths = data.contents.map(
-    (content: { id: string }) => `/recommend/${content.id}`
+  const data = await client.getAllContentIds({ endpoint: "recommend" });
+  const paths = data.map(
+    (id) => `/recommend/${id}`
   );
   return { paths, fallback: false };
 };
 
+// 詳細ページコンテンツ取得
 export const getStaticProps = async (context: { params: { id: string } }) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "recommend", contentId: id });

@@ -1,1 +1,1 @@
-export const LIST_PER_PAGE = 3;
+export const LIST_PER_PAGE = 9;

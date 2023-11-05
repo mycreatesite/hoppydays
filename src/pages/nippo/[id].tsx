@@ -35,14 +35,16 @@ export default function NippoId({nippo}:Props) {
   );
 };
 
+// 動的ページURLを生成
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "nippo" });
-  const paths = data.contents.map(
-    (content: { id: string }) => `/nippo/${content.id}`
+  const data = await client.getAllContentIds({ endpoint: "nippo" });
+  const paths = data.map(
+    (id) => `/nippo/${id}`
   );
   return { paths, fallback: false };
 };
 
+// 詳細ページコンテンツ取得
 export const getStaticProps = async (context: { params: { id: string } }) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "nippo", contentId: id });

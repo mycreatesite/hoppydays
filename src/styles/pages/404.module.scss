@@ -1,0 +1,64 @@
+@use "../variables";
+
+
+.content {
+  position: relative;
+  z-index: 1;
+  height: 100svh;
+  text-align: center;
+  display: grid;
+  place-content: center;
+  margin-top: 32px;
+  @include variables.mq(sp) {
+    margin-top: 48px;
+  }
+}
+
+.title {
+  margin-bottom: 40px;
+  width: 80%;
+  justify-self: center;
+  animation: infinite float 2s both alternate ease-in-out;
+  @include variables.mq(sp) {
+    width: 50%;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0) rotate(1deg);
+  }
+  to {
+    transform: translateY(-8px) rotate(-1deg);
+  }
+}
+
+.el1 {
+  fill: transparent;
+  -webkit-transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.8s;
+          transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.8s;
+}
+
+[class*="is-active"] .el1 {
+  fill: rgb(34, 34, 34);
+}
+
+.el2 {
+  fill: transparent;
+  -webkit-transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.9s;
+          transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.9s;
+}
+
+[class*="is-active"] .el2 {
+  fill: rgb(34, 34, 34);
+}
+
+.el3 {
+  fill: transparent;
+  -webkit-transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s;
+          transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s;
+}
+
+[class*="is-active"] .el3 {
+  fill: rgb(34, 34, 34);
+}

@@ -1,6 +1,5 @@
 import { NextSeo } from "next-seo";
 import Link from "next/link";
-import Image from "next/image";
 import ArticleGeneralPage from "@/components/templates/ArticleGeneralPage";
 import LogoX from "@/components/elements/LogoX";
 import styles from "@/styles/pages/About.module.scss";

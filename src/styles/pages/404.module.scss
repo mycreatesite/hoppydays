@@ -1,6 +1,5 @@
 @use "../variables";
 
-
 .content {
   position: relative;
   z-index: 1;
@@ -8,23 +7,26 @@
   text-align: center;
   display: grid;
   place-content: center;
-  margin-top: 32px;
-  @include variables.mq(sp) {
-    margin-top: 48px;
-  }
+  margin-top: 104px;
 }
 
 .title {
   margin-bottom: 40px;
-  width: 80%;
   justify-self: center;
-  animation: infinite float 2s both alternate ease-in-out;
   @include variables.mq(sp) {
     width: 50%;
   }
 }
 
-@keyframes float {
+.message {
+  margin-bottom: 40px;
+}
+
+.content [class*="Button"] {
+  justify-self: center;
+}
+
+@keyframes float01 {
   from {
     transform: translateY(0) rotate(1deg);
   }
@@ -32,33 +34,63 @@
     transform: translateY(-8px) rotate(-1deg);
   }
 }
+@keyframes float02 {
+  from {
+    transform: translateY(0) rotate(-3deg);
+  }
+  to {
+    transform: translateY(-8px) rotate(3deg);
+  }
+}
 
 .el1 {
+  animation: infinite float01 2s both alternate ease-in-out;
+  transform-origin: center;
+  stroke-dashoffset: 1052.0714111328125px;
+  stroke-dasharray: 1052.0714111328125px;
   fill: transparent;
-  -webkit-transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.8s;
-          transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.8s;
+  -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715)
+      0s,
+    fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s,
+    fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s;
 }
 
 [class*="is-active"] .el1 {
+  stroke-dashoffset: 0;
   fill: rgb(34, 34, 34);
 }
 
 .el2 {
-  fill: transparent;
-  -webkit-transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.9s;
-          transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 0.9s;
+  animation: infinite float02 1.5s both alternate-reverse ease-in-out;
+  transform-origin: center;
+  stroke-dashoffset: 878.986328125px;
+  stroke-dasharray: 878.986328125px;
+  -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715)
+      0.12s,
+    fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s,
+    fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
 }
 
 [class*="is-active"] .el2 {
-  fill: rgb(34, 34, 34);
+  stroke-dashoffset: 0;
 }
 
 .el3 {
+  animation: infinite float01 3s both alternate ease-in-out;
+  transform-origin: center;
+  stroke-dashoffset: 1052.0693359375px;
+  stroke-dasharray: 1052.0693359375px;
   fill: transparent;
-  -webkit-transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s;
-          transition: fill 0.7s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s;
+  -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715)
+      0.24s,
+    fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s;
+  transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s,
+    fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s;
 }
 
 [class*="is-active"] .el3 {
+  stroke-dashoffset: 0;
   fill: rgb(34, 34, 34);
 }

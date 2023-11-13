@@ -13,6 +13,7 @@
 .title {
   margin-bottom: 16px;
   justify-self: center;
+  transform: rotate(-3deg);
   @include variables.mq(sp) {
     width: 50%;
   }
@@ -28,23 +29,23 @@
 
 @keyframes float01 {
   from {
-    transform: translateY(0) rotate(1deg);
+    transform: translateY(0) rotate(3deg);
   }
   to {
-    transform: translateY(-8px) rotate(-1deg);
+    transform: translateY(-12px) rotate(-3deg);
   }
 }
 @keyframes float02 {
   from {
-    transform: translateY(0) rotate(-3deg);
+    transform: translateY(0) rotate(-12deg);
   }
   to {
-    transform: translateY(-8px) rotate(3deg);
+    transform: translateY(-16px) rotate(3deg);
   }
 }
 
 .el1 {
-  animation: infinite float01 2s both alternate ease-in-out;
+  animation: infinite float01 3s both alternate ease-in-out;
   transform-origin: center;
   stroke-dashoffset: 1052.0714111328125px;
   stroke-dasharray: 1052.0714111328125px;
@@ -62,7 +63,7 @@
 }
 
 .el2 {
-  animation: infinite float02 1.5s both alternate-reverse ease-in-out;
+  animation: infinite float02 2.5s both alternate-reverse ease-in-out;
   transform-origin: center;
   stroke-dashoffset: 878.986328125px;
   stroke-dasharray: 878.986328125px;
@@ -78,7 +79,7 @@
 }
 
 .el3 {
-  animation: infinite float01 3s both alternate ease-in-out;
+  animation: infinite float01 4s both alternate ease-in-out;
   transform-origin: center;
   stroke-dashoffset: 1052.0693359375px;
   stroke-dasharray: 1052.0693359375px;

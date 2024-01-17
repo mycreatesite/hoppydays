@@ -32,6 +32,11 @@ export default function About() {
             <p><Link href={`https://www.hoppy-happy.com/`} target="_blank" rel="noopener noreferrer">ホッピービバレッジ株式会社</Link>に敬意と愛を込めて。</p>
           </section>
           <section>
+            <h2>サイト受賞歴</h2>
+            <p><Link href={`https://www.awwwards.com/sites/hoppy-days`} target="_blank" rel="noopener noreferrer">Awwwards</Link> - Honorable Mention</p>
+            <p><Link href={`https://www.cssdesignawards.com/sites/hoppy-days/44858/`} target="_blank" rel="noopener noreferrer">CSS Design Awards</Link> - SPECIAL KUDOS</p>
+          </section>
+          <section>
             <h2>SNS</h2>
             <p>
               <Link href={`https://twitter.com/hello_myscreate`} target="_blank" rel="noopener noreferrer">

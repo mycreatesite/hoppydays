@@ -4,5 +4,5 @@ module.exports = {
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   sitemapSize: 7000,
-  exclude: ['*/page/*'],
+  exclude: ['*/page/*', '*/recommend/search*'],
 };

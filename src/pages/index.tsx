@@ -5,6 +5,7 @@ import SectionMainvisual from "@/components/templates/SectionMainvisual";
 import SectionMessage from "@/components/templates/SectionMessage";
 import SectionPost from "@/components/templates/SectionPost";
 import Slider from "@/components/modules/Slider";
+import JsonldTop from "@/jsonld/JsonldTop";
 
 type Props = {
   recommends: Recommend[];
@@ -14,6 +15,7 @@ type Props = {
 export default function Home({ recommends, nippos }: Props) {
   return (
     <>
+      <JsonldTop />
       <SectionMainvisual />
       <SectionMessage />
       <SectionPost

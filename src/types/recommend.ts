@@ -1,5 +1,7 @@
 export type Recommend = {
   id: string;
+  publishedAt: string;
+  updatedAt: string;
   name: string;
   area: string;
   link: string;

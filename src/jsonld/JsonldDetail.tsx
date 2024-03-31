@@ -26,7 +26,7 @@ const JsonldDetail = ({
       datePublished={item.publishedAt}
       dateModified={item.updatedAt}
       authorName="ma-ya's CREATE"
-      description={item.body}
+      description={`${item.body.slice(0, 30)}...`}
     />
   );
 };

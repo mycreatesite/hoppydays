@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 import SectionListPage from "@/components/templates/SectionListPage";
 import SearchGroup from "@/components/modules/SearchGroup";
 import { LIST_PER_PAGE } from "@/components/util/globalSettings";
 
 export default function Search() {
+
+  const PAGE_TITLE = "おすすめホッピー居酒屋を検索";
+  const PAGE_PATH = "recommend";
 
   const router = useRouter();
 
@@ -49,6 +53,14 @@ export default function Search() {
 
   return (
     <>
+      <NextSeo
+        title={`${PAGE_TITLE} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`}
+        noindex={true}
+        openGraph={{
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/recommend`,
+          title: `${PAGE_TITLE} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`,
+        }}
+      />
       <SectionListPage
         items={recommends}
         totalCount={totalCount}

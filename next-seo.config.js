@@ -1,11 +1,11 @@
 const SEO = {
   defaultTitle: process.env.NEXT_PUBLIC_SITE_NAME,
-  description: "Hoppy, brews your life. ホッピー、それは人生を豊かにするエッセンス。",
+  description: "Hoppy brews your life. ホッピー、それは人生を豊かにするエッセンス。",
   openGraph: {
     type: "website",
     title: process.env.NEXT_PUBLIC_SITE_NAME,
     description:
-      "Hoppy, brews your life. ホッピー、それは人生を豊かにするエッセンス。",
+      "Hoppy brews your life. ホッピー、それは人生を豊かにするエッセンス。",
     site_name: process.env.NEXT_PUBLIC_SITE_NAME,
     url: process.env.NEXT_PUBLIC_SITE_URL,
     images: [

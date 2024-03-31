@@ -2,6 +2,7 @@ import { client } from "@/libs/client";
 import { Nippo } from "@/types/nippo";
 import { NextSeo } from "next-seo";
 import ArticleDetailPage from "@/components/templates/ArticleDetailPage";
+import JsonldDetail from "@/jsonld/JsonldDetail";
 
 type Props = {
   nippo: Nippo;
@@ -24,6 +25,9 @@ export default function NippoId({nippo}:Props) {
             },
           ],
         }}
+      />
+      <JsonldDetail 
+        item={nippo}
       />
       <ArticleDetailPage
         item={nippo}

@@ -1,6 +1,7 @@
 import { NextSeo } from "next-seo";
 import Link from "next/link";
 import ArticleGeneralPage from "@/components/templates/ArticleGeneralPage";
+import JsonldAbout from "@/jsonld/JsonldAbout";
 import LogoX from "@/components/elements/LogoX";
 import styles from "@/styles/pages/About.module.scss";
 
@@ -17,6 +18,7 @@ export default function About() {
           title: `${PAGE_TITLE} │ ${process.env.NEXT_PUBLIC_SITE_NAME}`,
         }}
       />
+      <JsonldAbout name={PAGE_TITLE} />
       <ArticleGeneralPage
         heading={{ first: "Abo", second: "ut" }}
         headingJa={PAGE_TITLE}

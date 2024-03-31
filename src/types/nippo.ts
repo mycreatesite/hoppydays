@@ -1,6 +1,8 @@
 export type Nippo = {
   id: string;
   date: string;
+  publishedAt: string;
+  updatedAt: string;
   title: string;
   name: string;
   body: string;

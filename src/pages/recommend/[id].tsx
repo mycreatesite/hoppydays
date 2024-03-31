@@ -2,6 +2,7 @@ import { client } from "@/libs/client";
 import { Recommend } from "@/types/recommend";
 import { NextSeo } from "next-seo";
 import ArticleDetailPage from "@/components/templates/ArticleDetailPage";
+import JsonldDetail from "@/jsonld/JsonldDetail";
 
 type Props = {
   recommend: Recommend;
@@ -27,6 +28,9 @@ export default function RecommendId({recommend}:Props) {
             },
           ],
         }}
+      />
+      <JsonldDetail 
+        item={recommend}
       />
       <ArticleDetailPage
         item={recommend}

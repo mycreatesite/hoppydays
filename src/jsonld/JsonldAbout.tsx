@@ -7,6 +7,10 @@ type Props = {
 const JsonldAbout = ({name}:Props) => {
   return (
     <ProfilePageJsonLd
+      mainEntity={{
+        "@type": "Person",
+        name: "ma-ya's CREATE"
+      }}
       lastReviewed="2023-10-01T00:00:00+09:00"
       breadcrumb={[
         {

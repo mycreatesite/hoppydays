@@ -23,3 +23,4 @@ jobs:
           GH_REPO: ${{ github.repository }}
         run: |
           gh workflow enable keepalive.yml
+          gh workflow enable main.yml

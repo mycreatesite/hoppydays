@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from 'next/image';
 import { useRouter } from "next/router";
 import Container from "@/components/layouts/Container";
+import ButtonA11y from "@/components/elements/ButtonA11y";
 import styles from "../../styles/components/layouts/Header.module.scss";
 
 const Header = () => {
@@ -45,6 +46,7 @@ const Header = () => {
               <li><Link href="/recommend" aria-label="Recommend"><span data-menu="Recommend">Recommend</span></Link></li>
               <li><Link href="/nippo" aria-label="Nippo"><span data-menu="Nippo">Nippo</span></Link></li>
             </ul>
+            <ButtonA11y/>
           </nav>
         </div>
       </Container>

@@ -28,6 +28,25 @@ body {
   letter-spacing: 0.08em;
 }
 
+body.is-paused {
+  *, *::after, *::before {
+    animation-play-state: paused !important;
+    transition: none !important;
+  }
+  .js-scrollParallax-post, .js-scrollParallax-bubble {
+    transform: translate3d(0, 0, 0) !important;
+  }
+  .js-scrollParallax-slideContainer {
+    transform: translate3d(0, 0, 0) !important;
+    a, a img {
+      transform: scale(1) !important;
+      &:hover {
+        transform: scale(1) !important;
+      }
+    }
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;

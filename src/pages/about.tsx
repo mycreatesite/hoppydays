@@ -26,7 +26,7 @@ export default function About() {
         <div className={`${styles.aboutContent}`}>
           <section>
             <h2>サイト管理人より</h2>
-            <p>こんにちは。<br/>千葉県在住のWEBデザイナー、ma-ya&apos;s CREATE&#xff3b;まーやずくりえいと&#xff3d;と申します。</p>
+            <p>こんにちは。<br/>東京都在住のWEBデザイナー、ma-ya&apos;s CREATE&#xff3b;まーやずくりえいと&#xff3d;と申します。</p>
             <p>ホッピーとつまみとうさぎを愛するおじさんデザイナーです。</p>
             <p>「HOPPY DAYS」はぼくの独断と偏見に基づいて構築したホッピーのファンサイトのようなものです。</p>
             <p>このサイトでは個人的におすすめのホッピー居酒屋（ホッピーを取り扱う居酒屋）の紹介や、ホッピーと過ごした日々の記録をゆるく綴っています。</p>
@@ -34,9 +34,10 @@ export default function About() {
             <p><Link href={`https://www.hoppy-happy.com/`} target="_blank" rel="noopener noreferrer">ホッピービバレッジ株式会社</Link>に敬意と愛を込めて。</p>
           </section>
           <section>
-            <h2>サイト受賞歴</h2>
+            <h2>サイト受賞・掲載歴</h2>
             <p><Link href={`https://www.awwwards.com/sites/hoppy-days`} target="_blank" rel="noopener noreferrer">Awwwards</Link> - Honorable Mention</p>
             <p><Link href={`https://www.cssdesignawards.com/sites/hoppy-days/44858/`} target="_blank" rel="noopener noreferrer">CSS Design Awards</Link> - SPECIAL KUDOS</p>
+            <p><Link href={`https://www.aaa11y.com/675673ca9ece26765ca449ce/`} target="_blank" rel="noopener noreferrer">AAA11Y</Link> - Accessible Website Gallery</p>
           </section>
           <section>
             <h2>SNS</h2>

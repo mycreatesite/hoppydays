@@ -52,7 +52,7 @@ const Footer = () => {
               </Link>
             </div>
             <p className={`${styles.copyright}`}>
-              © Copyright 2023 │ ma-ya&apos;s CREATE All rights reserved.
+              © Copyright {new Date().getFullYear()} │ ma-ya&apos;s CREATE All rights reserved.
             </p>
           </div>
         </div>
